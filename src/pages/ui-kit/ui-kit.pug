@@ -1,12 +1,10 @@
-//- extends Layouts/main-layout.pug
+extends Layouts/uikit.pug
 
 block variables
   - let title = 'UI-kit';
-  - let withHeaderFooter = true;
-  - let pageClassName = 'UI-kit';
-
 block styles
 block content
-  main.page__main(class=pageClassName)
+  img(src=require('Img/logo.svg'), alt="Podster.fm") 
+  h1 UIKit
 block scripts
-  script(src=require('./ui-kit.js') defer)
+  script(src=require('./ui-kit.js'))

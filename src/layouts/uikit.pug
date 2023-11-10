@@ -1,0 +1,17 @@
+block variables
+
+doctype html
+html(lang='ru' class='page-uikit')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="icon" href="assets/favicon/favicon.ico" type="image/ico")
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap' rel='stylesheet')
+    link(rel="stylesheet", href=require('./uikit.scss'))
+    title #{title}
+    block styles
+  body(class='page-uikit__body')
+    main(class='page-uikit__main')
+      block content
+
+    block scripts
