@@ -22,14 +22,14 @@ block content
     button(type="button" class="form-password__toggle-view")
   br
   pre 
-    |&lt;div class="form-password"&gt;
+    | &lt;div class="form-password"&gt;
     |   &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
     |   &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
-    |&lt;/div&gt;
-    |&lt;div class="form-password visible"&gt;
+    | &lt;/div&gt;
+    | &lt;div class="form-password visible"&gt;
     |   &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
     |   &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
-    |&lt;/div&gt;
+    | &lt;/div&gt;
   h3 Form select
   select(class="form-select")
     option Option
@@ -85,3 +85,15 @@ block content
     |     Checked checkbox
     |   &lt;/label&gt;
     | &lt;/div&gt;
+  br
+  h3 Buttons 
+  button(type="button" class="btn btn-primary") Primary
+  |&emsp;
+  button(type="button" class="btn btn-secondary") Secondary
+  |&emsp;
+  button(type="button" class="btn btn-secondary" disabled) Disabled
+  br
+  pre
+    |&lt;button class="btn btn-primary" type="button"&gt;Primary&lt;/button&gt;
+    |&lt;button class="btn btn-secondary" type="button"&gt;Secondary&lt;/button&gt;
+    |&lt;button class="btn btn-secondary" type="button" disabled="disabled"&gt;Disabled&lt;/button&gt;
