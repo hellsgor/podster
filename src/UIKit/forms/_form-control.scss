@@ -1,0 +1,18 @@
+.form-control {
+  display: block;
+  width: 100%;
+  height: 45px;
+  border-radius: $brs-sm;
+  border: 0;
+  background-color: $blue-1;
+  padding: 0 18px;
+  color: $main;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $main;
+  }
+}
