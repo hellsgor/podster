@@ -13,4 +13,16 @@
   &__main {
     padding: 60px;
   }
+
+  pre {
+    background-color: $white-1;
+    border-radius: $brs-md;
+    padding: 16px;
+  }
+
+  code {
+    background-color: $white-1;
+    border-radius: $brs-sm;
+    padding: 8px;
+  }
 }

@@ -12,6 +12,24 @@ block content
   br
   code &lt;input type="text" class="form-control"&gt;
   p Тот же класс для других типов инпутов.
+  h3 Поле для ввода пароля
+  div(class="form-password")
+    input(type="password" class="form-control" placeholder="Введите пароль") 
+    button(type="button" class="form-password__toggle-view")
+  br
+  div(class="form-password visible")
+    input(type="password" class="form-control" placeholder="Введите пароль") 
+    button(type="button" class="form-password__toggle-view")
+  br
+  pre 
+    |&lt;div class="form-password"&gt;
+    |   &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
+    |   &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
+    |&lt;/div&gt;
+    |&lt;div class="form-password visible"&gt;
+    |   &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
+    |   &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
+    |&lt;/div&gt;
   h3 Form select
   select(class="form-select")
     option Option
@@ -34,13 +52,13 @@ block content
   br
   pre 
     | &lt;div class="form-check"&gt;
-    |   &lt;input class="form-check-input" type="checkbox" value="" id="exampleCheckDefault"&gt;
+    |   &lt;input class="form-check-input" type="checkbox" id="exampleCheckDefault"&gt;
     |   &lt;label class="form-check-label" for="exampleCheckDefault"&gt;
     |     Default checkbox
     |   &lt;/label&gt;
     | &lt;/div&gt;
     | &lt;div class="form-check"&gt;
-    |   &lt;input class="form-check-input" type="checkbox" value="" id="exampleCheckChecked" checked&gt;
+    |   &lt;input class="form-check-input" type="checkbox" id="exampleCheckChecked" checked&gt;
     |   &lt;label class="form-check-label" for="exampleCheckChecked"&gt;
     |     Checked checkbox
     |   &lt;/label&gt;
@@ -49,3 +67,21 @@ block content
   div(class="form-check form-switch")
     input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitch")
     label(class="form-check-label" for="exampleSwitch") Switch
+  br
+  div(class="form-check form-switch")
+    input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitchChecked" checked)
+    label(class="form-check-label" for="exampleSwitchChecked") Switch checked
+  br
+  pre 
+    | &lt;div class="form-check form-switch"&gt;
+    |   &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchDefault"&gt;
+    |   &lt;label class="form-check-label" for="exampleSwitchDefault"&gt;
+    |     Default checkbox
+    |   &lt;/label&gt;
+    | &lt;/div&gt;
+    | &lt;div class="form-check"&gt;
+    |   &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchChecked" checked&gt;
+    |   &lt;label class="form-check-label" for="exampleSwitchChecked"&gt;
+    |     Checked checkbox
+    |   &lt;/label&gt;
+    | &lt;/div&gt;
