@@ -1,0 +1,29 @@
+block variables
+
+doctype html
+html(lang='ru' class='page-office')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="icon" href="assets/favicon/favicon.ico" type="image/ico")
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap' rel='stylesheet')
+    link(rel="stylesheet", href=require('./office.scss'))
+    title #{title}
+    block styles
+  body(class='page-office__body')
+    aside(class="page-office__aside")
+      a(href="" class="page-office__logo")
+        img(src=require('Img/logo.svg'), alt="Podster.fm") 
+      nav(class="page-office__nav") 
+        block nav-content
+    div(class="page-office__content")
+      header(class="page-office__header")
+        block heading-content 
+        div(class="userinfo")
+          block userinfo-content
+      main(class="page-office__main")
+        block content
+      footer(class="page-office__footer")
+        include Components/common/footer/footer.pug
+    
+    block scripts

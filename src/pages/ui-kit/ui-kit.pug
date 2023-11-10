@@ -1,0 +1,12 @@
+//- extends Layouts/main-layout.pug
+
+block variables
+  - let title = 'UI-kit';
+  - let withHeaderFooter = true;
+  - let pageClassName = 'UI-kit';
+
+block styles
+block content
+  main.page__main(class=pageClassName)
+block scripts
+  script(src=require('./ui-kit.js') defer)

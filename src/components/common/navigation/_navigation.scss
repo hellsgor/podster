@@ -1,0 +1,41 @@
+.page-office-navigation {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 16px;
+    border-radius: $brs-md;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $white-1;
+
+      a {
+        color: $main;
+      }
+
+      path {
+        fill: $main;
+      }
+    }
+
+    span {
+      line-height: 0;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      color: $blue-3;
+      // font-size: $base-font-size;
+    }
+  }
+}

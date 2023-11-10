@@ -1,0 +1,60 @@
+.page-office-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+      align-items: end;
+    }
+  }
+
+  &__col {
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+
+        a {
+          display: block;
+          text-decoration: none;
+        }
+      }
+
+      li + li {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .social {
+    span {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    a + a {
+      margin-left: 14px;
+    }
+  }
+
+  .copy {
+    span {
+      color: $blue-3;
+      margin-left: 24px;
+    }
+  }
+
+  .requisites {
+    font-size: 12px;
+    line-height: 15px;
+    color: $blue-3;
+  }
+}

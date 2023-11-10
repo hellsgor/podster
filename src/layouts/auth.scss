@@ -1,0 +1,25 @@
+@import 'Styles/styles.scss';
+@import 'Components/components.scss';
+
+.page-auth {
+  height: 100%;
+
+  &__body {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $white-2;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $main;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 26px;
+    left: 34px;
+  }
+}

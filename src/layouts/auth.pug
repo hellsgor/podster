@@ -1,0 +1,19 @@
+block variables
+
+doctype html
+html(lang='ru' class='page-auth')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="icon" href="assets/favicon/favicon.ico" type="image/ico")
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap' rel='stylesheet')
+    link(rel="stylesheet", href=require('./auth.scss'))
+    title #{title}
+    block styles
+  body(class='page-auth__body')
+    a(href="" class="page-auth__logo")
+      img(src=require('Img/logo.svg'), alt="Podster.fm") 
+    main(class='page-auth__main')
+      block content
+
+    block scripts

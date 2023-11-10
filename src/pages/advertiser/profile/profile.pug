@@ -1,0 +1,42 @@
+extends Layouts/office.pug
+
+block variables
+  - let title = 'Профиль';
+
+block nav-content
+  ul(class="page-office-navigation")
+    li
+      span(class="page-office-navigation__icon")
+        include Icons/dashboard.pug
+      a(href="" class="page-office-navigation__link") Реклама
+    li
+      span(class="page-office-navigation__icon")
+        include Icons/grid.pug
+      a(href="" class="page-office-navigation__link") Мои подкасты
+    li
+      span(class="page-office-navigation__icon")
+        include Icons/chart.pug
+      a(href="" class="page-office-navigation__link") Статистика
+    li
+      span(class="page-office-navigation__icon")
+        include Icons/ruble.pug
+      a(href="" class="page-office-navigation__link") Взаиморасчеты
+    li
+      span(class="page-office-navigation__icon")
+        include Icons/wallet.pug
+      a(href="" class="page-office-navigation__link") Кошелёк
+    li
+      span(class="page-office-navigation__icon")
+        include Icons/grid.pug
+      a(href="" class="page-office-navigation__link") Бухгалтерия
+    li
+      span(class="page-office-navigation__icon")
+        include Icons/person.pug
+      a(href="" class="page-office-navigation__link") Профиль
+
+block heading-content
+  h1 Профиль
+block userinfo-content
+  a(href="") userinfo
+block content
+  p Содержимое
