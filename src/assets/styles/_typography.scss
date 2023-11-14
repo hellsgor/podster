@@ -1,27 +1,32 @@
 body,
-.body-3 {
+  //.font-base = "Body 3" в макете
+.font-base {
   font-family: $font-family;
   font-style: normal;
-  line-height: normal;
-  font-size: 14px;
-  font-weight: 400;
+  line-height: $base-line-height;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
 }
 
-.body-3_medium {
+//.font-base.font-base_medium = "Body 3 medium" в макете
+.font-base_medium {
   font-weight: 500;
 }
 
-.body-1 {
+//.font-base.font-base_xl = "Body 1" в макете
+.font-base_xl {
   font-size: 18px;
   font-weight: 500;
 }
 
-.body-2 {
+//.font-base.font-base_l = "Body 2" в макете
+.font-base_l {
   font-size: 16px;
   font-weight: 500;
 }
 
-.small-text {
+//.font-base.font-base_s = "Small text" в макете
+.font-base_s {
   font-size: 12px;
 }
 
