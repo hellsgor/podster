@@ -1,0 +1,45 @@
+.auth-block {
+  width: 350px;
+
+  h1 {
+    margin: 0 0 32px;
+    // Типография на правках, ставлю свои стили
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-label {
+    margin-bottom: 8px;
+  }
+
+  .form-switch {
+    margin-top: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .btn {
+      width: 144px;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    color: $blue-3;
+    
+  }
+}

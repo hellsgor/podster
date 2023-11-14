@@ -3,7 +3,7 @@
   width: 100%;
   height: 45px;
   border-radius: $brs-sm;
-  border: 0;
+  border: 1px solid transparent;
   background-color: $blue-1;
   padding: 0 18px;
   color: $main;
@@ -14,5 +14,16 @@
 
   &::placeholder {
     color: $blue-3;
+  }
+
+  &.is-invalid {
+    border-color: $red-1;
+    color: $red-1;
+
+    &+.invalid-feedback {
+      margin-top: 4px;
+      color: $red-1;
+      font-weight: 300;
+    }
   }
 }

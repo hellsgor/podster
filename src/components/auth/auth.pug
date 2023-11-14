@@ -1,0 +1,23 @@
+section(class="auth-block")
+  h1 Авторизация
+  form
+    div(class="auth-block__form-group")
+      label(for="loginInpupt" class="form-label") Почта:
+      input(type="text" class="form-control" placeholder="Введите электронную почту" id="loginInput")
+      div(class="form-check form-switch")
+        input(type="checkbox" class="form-check-input" role="switch" id="loginTypeSwitch")
+        label(class="form-check-label" for="loginTypeSwitch") Войти по ИНН
+    div(class="auth-block__form-group")
+      label(for="passwordInput" class="form-label") Пароль:
+      div(class="form-password")
+        input(type="password" class="form-control" placeholder="Введите пароль" id="passwordInput") 
+        button(type="button" class="form-password__toggle-view")
+    div(class="auth-block__form-group form-check")
+      input(type="checkbox" class="form-check-input" id="rememberUser")
+      label(class="form-check-label" for="rememberUser") Запомнить меня
+    div(class="auth-block__buttons")
+      button(type="submit" class="btn btn-secondary" disabled) Войти
+      a(href="") Забыли пароль?
+  footer(class="auth-block__footer")
+    | Нет аккаунта? 
+    a(href="") Регистрация

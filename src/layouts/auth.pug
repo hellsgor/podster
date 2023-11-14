@@ -10,10 +10,11 @@ html(lang='ru' class='page-auth')
     link(rel="stylesheet", href=require('./auth.scss'))
     title #{title}
     block styles
+    block scripts
   body(class='page-auth__body')
     a(href="" class="page-auth__logo")
       img(src=require('Img/logo.svg'), alt="Podster.fm") 
     main(class='page-auth__main')
       block content
 
-    block scripts
+    
