@@ -2,8 +2,9 @@ extends Layouts/auth.pug
 
 block variables
   - let title = 'Авторизация';
-
-block content
-  h1 Авторизация
 block scripts
-  script(src=require('./auth.js'))
+  script(src=require('./auth.js') defer)
+block content
+  include Components/auth/auth.pug
+
+

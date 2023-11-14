@@ -3,6 +3,8 @@ extends Layouts/uikit.pug
 block variables
   - let title = 'UI-kit';
 block styles
+block scripts 
+  script(src=require("./ui-kit.js") defer)
 block content
   img(src=require('Img/logo.svg'), alt="Podster.fm") 
   h1 UIKit
@@ -16,20 +18,15 @@ block content
   div(class="form-password")
     input(type="password" class="form-control" placeholder="Введите пароль") 
     button(type="button" class="form-password__toggle-view")
-  br
-  div(class="form-password visible")
-    input(type="password" class="form-control" placeholder="Введите пароль") 
-    button(type="button" class="form-password__toggle-view")
-  br
-  pre 
-    | &lt;div class="form-password"&gt;
-    |   &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
-    |   &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
-    | &lt;/div&gt;
-    | &lt;div class="form-password visible"&gt;
-    |   &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
-    |   &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
-    | &lt;/div&gt;
+  pre
+    |&lt;div class="form-password"&gt;
+    |  &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
+    |  &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
+    |&lt;/div&gt;
+    |&lt;div class="form-password visible"&gt;
+    |  &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
+    |  &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
+    |&lt;/div&gt;
   h3 Form select
   select(class="form-select")
     option Option
@@ -50,19 +47,19 @@ block content
     input(type="checkbox" class="form-check-input" id="exampleCheckboxChecked" checked)
     label(class="form-check-label" for="exampleCheckboxChecked") Checkbox checked
   br
-  pre 
-    | &lt;div class="form-check"&gt;
-    |   &lt;input class="form-check-input" type="checkbox" id="exampleCheckDefault"&gt;
-    |   &lt;label class="form-check-label" for="exampleCheckDefault"&gt;
-    |     Default checkbox
-    |   &lt;/label&gt;
-    | &lt;/div&gt;
-    | &lt;div class="form-check"&gt;
-    |   &lt;input class="form-check-input" type="checkbox" id="exampleCheckChecked" checked&gt;
-    |   &lt;label class="form-check-label" for="exampleCheckChecked"&gt;
-    |     Checked checkbox
-    |   &lt;/label&gt;
-    | &lt;/div&gt;
+  pre
+    |&lt;div class="form-check"&gt;
+    |  &lt;input class="form-check-input" type="checkbox" id="exampleCheckDefault"&gt;
+    |  &lt;label class="form-check-label" for="exampleCheckDefault"&gt;
+    |    Default checkbox
+    |  &lt;/label&gt;
+    |&lt;/div&gt;
+    |&lt;div class="form-check"&gt;
+    |  &lt;input class="form-check-input" type="checkbox" id="exampleCheckChecked" checked&gt;
+    |  &lt;label class="form-check-label" for="exampleCheckChecked"&gt;
+    |    Checked checkbox
+    |  &lt;/label&gt;
+    |&lt;/div&gt;
   h3 Form switch 
   div(class="form-check form-switch")
     input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitch")
@@ -72,19 +69,19 @@ block content
     input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitchChecked" checked)
     label(class="form-check-label" for="exampleSwitchChecked") Switch checked
   br
-  pre 
-    | &lt;div class="form-check form-switch"&gt;
-    |   &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchDefault"&gt;
-    |   &lt;label class="form-check-label" for="exampleSwitchDefault"&gt;
-    |     Default checkbox
-    |   &lt;/label&gt;
-    | &lt;/div&gt;
-    | &lt;div class="form-check"&gt;
-    |   &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchChecked" checked&gt;
-    |   &lt;label class="form-check-label" for="exampleSwitchChecked"&gt;
-    |     Checked checkbox
-    |   &lt;/label&gt;
-    | &lt;/div&gt;
+  pre
+    |&lt;div class="form-check form-switch"&gt;
+    |  &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchDefault"&gt;
+    |  &lt;label class="form-check-label" for="exampleSwitchDefault"&gt;
+    |    Default checkbox
+    |  &lt;/label&gt;
+    |&lt;/div&gt;
+    |&lt;div class="form-check"&gt;
+    |  &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchChecked" checked&gt;
+    |  &lt;label class="form-check-label" for="exampleSwitchChecked"&gt;
+    |    Checked checkbox
+    |  &lt;/label&gt;
+    |&lt;/div&gt;
   br
   h3 Buttons 
   button(type="button" class="btn btn-primary") Primary
@@ -97,3 +94,10 @@ block content
     |&lt;button class="btn btn-primary" type="button"&gt;Primary&lt;/button&gt;
     |&lt;button class="btn btn-secondary" type="button"&gt;Secondary&lt;/button&gt;
     |&lt;button class="btn btn-secondary" type="button" disabled="disabled"&gt;Disabled&lt;/button&gt;
+  h3 Validation
+  input(type="text" class="form-control is-invalid" placeholder="Введите код" value="1234") 
+  div(class="invalid-feedback") Неверный код
+  br
+  pre
+    |&lt;input type="text" class="form-control is-invalid"&gt;
+    |&lt;div class="invalid-feedback"&gt;Неверный код&lt;/div&gt;
