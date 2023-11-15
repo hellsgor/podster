@@ -17,14 +17,7 @@ block content
   h3 Поле для ввода пароля
   include UIKit/form-password/form-password.pug
   +form-control('Пароль', 'password', 'advertiser-password', 'Введите пароль')
-  //div(class="form-password")
-  //  input(type="password" class="form-control" placeholder="Введите пароль")
-  //  button(type="button" class="form-password__toggle-view")
-  br
-  //div(class="form-password visible")
-  //  input(type="password" class="form-control" placeholder="Введите пароль")
-  //  button(type="button" class="form-password__toggle-view")
-  br
+
   h3 Form select
   //select(class="form-select")
   //  option Option
@@ -52,13 +45,9 @@ block content
   //  label(class="form-check-label" for="exampleSwitchChecked") Switch checked
 
   h3 Buttons
-  button(type="button" class="btn btn-primary") Primary
-  | &emsp;
-  button(type="button" class="btn btn-secondary") Secondary
-  | &emsp;
-  button(type="button" class="btn btn-secondary" disabled) Disabled
-  br
-  pre
-    | &lt;button class="btn btn-primary" type="button"&gt;Primary&lt;/button&gt;
-    | &lt;button class="btn btn-secondary" type="button"&gt;Secondary&lt;/button&gt;
-    | &lt;button class="btn btn-secondary" type="button" disabled="disabled"&gt;Disabled&lt;/button&gt;
+  .ui-kit__component-container.ui-kit__component-container_gorizontal
+    include UIKit/button/button.pug
+    +button('test-button-primary', 'button', 'primary', 'Primary')
+    +button('test-button-secondary', 'button', 'secondary', 'Secondary')
+    +button('test-button-primary-disabled', 'button', 'primary', 'Disabled Primary')(disabled)
+    +button('test-button-secondary-disabled', 'button', 'secondary', 'Disabled Secondary ')(disabled)

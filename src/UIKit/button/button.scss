@@ -1,0 +1,32 @@
+.button {
+  height: 33px;
+  border-radius: $brs-md;
+  border: 0;
+  outline: none;
+  padding: 0 18px;
+  cursor: pointer;
+  min-width: 144px;
+  width: fit-content;
+
+  &_primary {
+    background-color: $main;
+    color: $white-2;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $primary-hover;
+      }
+    }
+  }
+
+  &_secondary {
+    background-color: $blue-1;
+    color: $main;
+  }
+
+  &:disabled {
+    background-color: $disabled-background;
+    cursor: default;
+    color: $blue-3;
+  }
+}
