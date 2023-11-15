@@ -1,2 +1,14 @@
 @import 'UIKit/form-control/form-control.scss';
 @import 'UIKit/form-password/form-password.scss';
+@import 'UIKit/button/button.scss';
+
+.ui-kit {
+  &__component-container {
+    display: flex;
+    gap: 32px;
+
+    &_gorizontal {
+      flex-direction: row;
+    }
+  }
+}
