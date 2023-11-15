@@ -1,0 +1,43 @@
+.form-control {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 8px;
+    color: $blue-3;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border-radius: $brs-sm;
+    border: 1px solid $blue-1;
+    background-color: $blue-1;
+    padding: 0 18px;
+    color: $main;
+
+    &:focus {
+      outline: none;
+    }
+
+    @media(hover: hover) {
+      &:hover {
+        border-color: $main;
+      }
+    }
+
+    &::placeholder {
+      color: $blue-3;
+    }
+  }
+
+  &__error {
+    &_hidden {
+      display: none;
+    }
+
+    color: $red-1;
+    margin-top: 4px;
+  }
+}

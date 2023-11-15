@@ -1,0 +1,5 @@
+mixin form-control(labelText, inputType, inputName, placeholder)
+  .form-control
+    label.form-control__label.font-base_xl(for=inputName) #{labelText}
+    input.form-control__input(type=inputType, name=inputName, id=inputName, placeholder=placeholder)
+    span.form-control__error.form-control__error_hidden Текст ошибки
