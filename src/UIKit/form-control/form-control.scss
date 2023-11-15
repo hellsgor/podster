@@ -33,11 +33,18 @@
   }
 
   &__error {
-    &_hidden {
-      display: none;
-    }
-
+    display: none;
     color: $red-1;
     margin-top: 4px;
+  }
+
+  &_with-error {
+    .form-control__input {
+      border-color: $red-1;
+    }
+
+    .form-control__error {
+      display: block;
+    }
   }
 }
