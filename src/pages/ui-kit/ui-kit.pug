@@ -7,11 +7,14 @@ block content
   img(src=require('Img/logo.svg'), alt="Podster.fm")
   h1 UIKit
   h2 Forms
+
   h3 Form control
   include UIKit/form-control/form-control.pug
   +form-control('ИНН', 'text', 'advertiser-inn', 'Введите данные')
-  br
+
   h3 Поле для ввода пароля
+  include UIKit/form-password/form-password.pug
+  +form-control('Пароль', 'password', 'advertiser-password', 'Введите пароль')
   //div(class="form-password")
   //  input(type="password" class="form-control" placeholder="Введите пароль")
   //  button(type="button" class="form-password__toggle-view")
@@ -45,7 +48,7 @@ block content
   //div(class="form-check form-switch")
   //  input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitchChecked" checked)
   //  label(class="form-check-label" for="exampleSwitchChecked") Switch checked
-  
+
   h3 Buttons
   button(type="button" class="btn btn-primary") Primary
   | &emsp;
