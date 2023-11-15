@@ -3,6 +3,8 @@ extends Layouts/uikit.pug
 block variables
   - let title = 'UI-kit';
 block styles
+block scripts
+  script(src=require('./ui-kit') defer)
 block content
   img(src=require('Img/logo.svg'), alt="Podster.fm")
   h1 UIKit
