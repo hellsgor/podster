@@ -1,0 +1,7 @@
+mixin form-switch(switchName, switchLeftText, switchRightText='')
+  .form-switch
+    input.form-switch__input(type='checkbox', name=switchName, id=switchName)&attributes(attributes)
+
+    span.form-switch__text.form-switch__text_left #{switchRightText}
+    label.form-switch__label(for=switchName)
+    span.form-switch__text.form-switch__text_right #{switchLeftText}

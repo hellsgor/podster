@@ -1,0 +1,28 @@
+.form-switch {
+  display: flex;
+  column-gap: 18px;
+  width: fit-content;
+
+  &__label {
+    display: block;
+    width: 36px;
+    height: 20px;
+    border: 0.5px solid $main;
+    border-radius: 100px;
+    background-color: $white-2;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-color: $main;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 2px;
+      border-radius: 100px;
+    }
+  }
+}

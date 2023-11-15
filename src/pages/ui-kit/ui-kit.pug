@@ -43,16 +43,10 @@ block content
       text: 'Только ссылка',
       href: 'https://google.com'
     })
-  //div(class="form-check")
-  //  input(type="checkbox" class="form-check-input" id="exampleCheckbox")
-  //  label(class="form-check-label" for="exampleCheckbox") Checkbox
-  //br
-  //div(class="form-check")
-  //  input(type="checkbox" class="form-check-input" id="exampleCheckboxChecked" checked)
-  //  label(class="form-check-label" for="exampleCheckboxChecked") Checkbox checked
-  //br
 
   h3 Form switch
+  include UIKit/form-switch/form-switch.pug
+  +form-switch('test-switch-1', 'Лево', 'Право')
   //div(class="form-check form-switch")
   //  input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitch")
   //  label(class="form-check-label" for="exampleSwitch") Switch
