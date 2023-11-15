@@ -1,0 +1,31 @@
+@import 'UIKit/button/button.scss';
+
+.form-check {
+  display: flex;
+  align-items: center;
+
+  &__box {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $blue-3;
+    background-color: $white-2;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: $brs-sm;
+
+    &:checked {
+      border-color: $main;
+      background-color: $main;
+      background-image: url('Icons/check.svg');
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    align-items: center;
+    padding-left: 14px;
+  }
+}

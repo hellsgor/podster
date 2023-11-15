@@ -26,6 +26,23 @@ block content
   //  option Option
   //  option Option
   h3 Form check
+  .ui-kit__component-container.ui-kit__component-container_gorizontal
+    include UIKit/form-check/form-check.pug
+    +form-check('test-checkbox-1', 'Просто checkbox', {})
+    +form-check('test-checkbox-2', 'Checkbox и', {
+      text: 'ссылка в нём',
+      href: 'https://google.com',
+    })
+    +form-check('test-checkbox-3', 'Checkbox и', {
+      text: 'кнопка',
+    })
+    +form-check('test-checkbox-4', '', {
+      text: 'Только кнопка',
+    })
+    +form-check('test-checkbox-4', '', {
+      text: 'Только ссылка',
+      href: 'https://google.com'
+    })
   //div(class="form-check")
   //  input(type="checkbox" class="form-check-input" id="exampleCheckbox")
   //  label(class="form-check-label" for="exampleCheckbox") Checkbox
