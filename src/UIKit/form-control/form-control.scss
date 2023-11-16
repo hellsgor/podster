@@ -2,11 +2,6 @@
   display: flex;
   flex-direction: column;
 
-  &__label {
-    margin-bottom: 8px;
-    color: $blue-3;
-  }
-
   &__input {
     display: block;
     width: 100%;

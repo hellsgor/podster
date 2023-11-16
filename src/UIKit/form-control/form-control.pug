@@ -1,6 +1,7 @@
 mixin form-control(labelText, inputType, inputName, placeholder)
   .form-control
-    label.form-control__label.font-base_xl(for=inputName) #{labelText}
+    include UIKit/control-label/control-label.pug
+    +control-label(labelText, inputName)(class='form-control__label')
     block content
       input.form-control__input(type=inputType, name=inputName, id=inputName, placeholder=placeholder)&attributes(
         attributes)
