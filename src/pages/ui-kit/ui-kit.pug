@@ -45,15 +45,10 @@ block content
     })
 
   h3 Form switch
-  include UIKit/form-switch/form-switch.pug
-  +form-switch('test-switch-1', 'Лево', 'Право')
-  //div(class="form-check form-switch")
-  //  input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitch")
-  //  label(class="form-check-label" for="exampleSwitch") Switch
-  //br
-  //div(class="form-check form-switch")
-  //  input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitchChecked" checked)
-  //  label(class="form-check-label" for="exampleSwitchChecked") Switch checked
+  .ui-kit__component-container.ui-kit__component-container_gorizontal
+    include UIKit/form-switch/form-switch.pug
+    +form-switch('test-switch-1', 'Право', 'Лево')
+    +form-switch('test-switch-2', 'Право')
 
   h3 Buttons
   .ui-kit__component-container.ui-kit__component-container_gorizontal
