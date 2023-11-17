@@ -10,14 +10,14 @@
 }
 
 .button {
-  height: 33px;
-  border-radius: $brs-md;
-  border: 0;
-  outline: none;
-  padding: 8px 18px;
-  cursor: pointer;
-  min-width: 144px;
   width: fit-content;
+  min-width: 144px;
+  height: 33px;
+  padding: 8px 18px;
+  outline: none;
+  border: 0;
+  border-radius: $brs-md;
+  cursor: pointer;
 
   &_primary {
     background-color: $main;
@@ -37,8 +37,8 @@
 
   &:disabled {
     background-color: $disabled-background;
-    cursor: default;
     color: $blue-3;
+    cursor: default;
   }
 
   &_transparent {
@@ -47,7 +47,7 @@
 
   &_link {
     @include transparent-button;
-    padding: 0;
     height: unset;
+    padding: 0;
   }
 }
