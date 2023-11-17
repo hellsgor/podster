@@ -12,7 +12,8 @@
 .button {
   width: fit-content;
   min-width: 144px;
-  height: 33px;
+  height: fit-content;
+  min-height: 33px;
   padding: 8px 18px;
   outline: none;
   border: 0;
@@ -47,7 +48,7 @@
 
   &_link {
     @include transparent-button;
-    height: unset;
+    min-height: unset;
     padding: 0;
   }
 }
