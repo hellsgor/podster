@@ -2,9 +2,6 @@ extends Layouts/uikit.pug
 
 block variables
   - let title = 'UI-kit';
-block styles
-block scripts
-  script(src=require('./ui-kit') defer)
 block content
   img(src=require('Img/logo.svg'), alt="Podster.fm")
   h1 UIKit
@@ -19,12 +16,55 @@ block content
   +form-control('Пароль', 'password', 'advertiser-password', 'Введите пароль')
 
   h3 Form select
-  include UIKit/form-select/form-select.pug
-  +form-select('Example Select', 'example-form-select-1', [
-    {value: 1, text: 'Option 1'},
-    {value: 2, text: 'Option 2'},
-    {value: 3, text: 'Option 3'}
-  ], 'Default Option')
+  .ui-kit__component-container.ui-kit__component-container_gorizontal
+    include UIKit/form-select/form-select.pug
+    +form-select('Example Select 1', 'example-form-select-1', false, [
+      {
+        heading: 'Заголовок 1',
+        items: [
+          {
+            value: 1,
+            text: 'Option 1',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 2,
+            text: 'Option 2',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 3,
+            text: 'Option 3',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+        ]
+      },
+      {
+        heading: 'Заголовок 2',
+        items: [
+          {
+            value: 4,
+            text: 'Option 4',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 5,
+            text: 'Option 5',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 6,
+            text: 'Option 6',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+        ]
+      },
+    ], 'Default Option')
+    +form-select('Example Select 2', 'example-form-select-2', false, [
+      {value: 1, text: 'Option 1', description: 'Lorem ipsum dolor sit amet.'},
+      {value: 2, text: 'Option 2', description: 'Lorem ipsum dolor sit amet.'},
+      {value: 3, text: 'Option 3', description: 'Lorem ipsum dolor sit amet.'}
+    ], 'Default Option')
 
   h3 Form check
   .ui-kit__component-container.ui-kit__component-container_vertical
@@ -67,3 +107,6 @@ block content
     +button('test-button-transparent', 'button', 'transparent', 'Transparent Button')
     +button('test-button-transparent-disabled', 'button', 'transparent', 'Disabled Transparent Button')(disabled)
     +button('test-button-link', 'button', 'link', 'Looks like a link')
+block styles
+block scripts
+  script(src=require('./ui-kit') defer)
