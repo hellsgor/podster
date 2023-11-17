@@ -24,12 +24,13 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
 
     .form-select__desktop
       button.form-select__select(type=button, id='pseudo-select', data-multiple-select=multiple) #{placeholder}
+        .form-select__arrow
+          include Icons/arrow-down.pug
 
       include UIKit/dropdown/dropdown.pug
       +dropdown(options, selectName)(class='form-select__dropdown')
 
-      .form-select__arrow
-        include Icons/arrow-down.pug
+
 
     include UIKit/form-control-error/form-control-error.pug
     +form-control-error()(class='form-select__error')
