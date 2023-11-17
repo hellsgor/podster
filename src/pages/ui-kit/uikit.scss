@@ -11,6 +11,10 @@
     display: flex;
     gap: 32px;
 
+    &_vertical {
+      flex-direction: column;
+    }
+
     &_gorizontal {
       flex-direction: row;
     }
