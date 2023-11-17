@@ -1,0 +1,19 @@
+mixin dropdown (options, selectName)
+  include UIKit/form-check/form-check.pug
+  .dropdown.visually-hidden()&attributes(attributes)
+    each option, optionIndex in options
+      if option.heading
+        .dropdown__options-group
+          p.dropdown__options-heading.font-base_xl #{option.heading}
+          each subOption, subOptionIndex  in option.items
+            +form-check(
+              selectName + '-opt-' + subOptionIndex,
+              subOption.text,
+              {},
+              subOption.description)(data-option-value=subOption.value)
+      else
+        +form-check(
+          selectName + '-opt-' + optionIndex,
+          option.text,
+          {},
+          option.description)(data-option-value=option.value)
