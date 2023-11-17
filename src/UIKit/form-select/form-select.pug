@@ -31,3 +31,5 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
       .form-select__arrow
         include Icons/arrow-down.pug
 
+    include UIKit/form-control-error/form-control-error.pug
+    +form-control-error()(class='form-select__error')

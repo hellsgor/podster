@@ -66,4 +66,14 @@
     left: 0;
     z-index: 1;
   }
+
+  &_with-error {
+    .form-select__select {
+      border-color: $red-1;
+    }
+
+    .form-select__error {
+      display: block;
+    }
+  }
 }
