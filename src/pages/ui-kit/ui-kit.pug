@@ -19,30 +19,37 @@ block content
   +form-control('Пароль', 'password', 'advertiser-password', 'Введите пароль')
 
   h3 Form select
-  //select(class="form-select")
-  //  option Option
-  //  option Option
-  //  option Option
-  //  option Option
-  //  option Option
+  include UIKit/form-select/form-select.pug
+  +form-select('Example Select', 'example-form-select-1', [
+    {value: 1, text: 'Option 1'},
+    {value: 2, text: 'Option 2'},
+    {value: 3, text: 'Option 3'}
+  ], 'Default Option')
+
   h3 Form check
-  .ui-kit__component-container.ui-kit__component-container_gorizontal
-    include UIKit/form-check/form-check.pug
-    +form-check('test-checkbox-1', 'Просто checkbox', {})
-    +form-check('test-checkbox-2', 'Checkbox и', {
-      text: 'ссылка в нём',
-      href: 'https://google.com',
-    })
-    +form-check('test-checkbox-3', 'Checkbox и', {
-      text: 'кнопка',
-    })
-    +form-check('test-checkbox-4', '', {
-      text: 'Только кнопка',
-    })
-    +form-check('test-checkbox-4', '', {
-      text: 'Только ссылка',
-      href: 'https://google.com'
-    })
+  .ui-kit__component-container.ui-kit__component-container_vertical
+    .ui-kit__component-container.ui-kit__component-container_gorizontal
+      include UIKit/form-check/form-check.pug
+      +form-check('test-checkbox-1', 'Просто checkbox', {})
+      +form-check('test-checkbox-2', 'Checkbox и', {
+        text: 'ссылка в нём',
+        href: 'https://google.com',
+      })
+      +form-check('test-checkbox-3', 'Checkbox и', {
+        text: 'кнопка',
+      })
+      +form-check('test-checkbox-4', '', {
+        text: 'Только кнопка',
+      })
+    .ui-kit__component-container.ui-kit__component-container_gorizontal
+      +form-check('test-checkbox-5', '', {
+        text: 'Только ссылка',
+        href: 'https://google.com'
+      })
+      +form-check('test-checkbox-6', 'Checkbox с описанием', {}, 'Lorem ipsum dolor sit amet.')
+      +form-check('test-checkbox-7', 'Checkbox c описанием и', {
+        text: 'кнопкой',
+      }, 'Lorem ipsum dolor sit amet.')
 
   h3 Form switch
   .ui-kit__component-container.ui-kit__component-container_gorizontal
