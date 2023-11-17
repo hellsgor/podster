@@ -1,0 +1,5 @@
+mixin button(buttonID, buttonType, visualType, buttonText)
+  button.button(
+    class='button_' + visualType,
+    type=buttonType,
+    id=buttonID)&attributes(attributes) #{buttonText}

@@ -1,0 +1,16 @@
+mixin form-check(checkName, checkLabel, linkOrButton, checkDescription='')
+  // linkOrButton={text: '', href: ''}
+  .form-check
+    input.form-check__box(type='checkbox', id=checkName, name=checkName)&attributes(attributes)
+    label.form-check__wrapper(for=checkName)
+      .form-check__label
+        span #{checkLabel}
+        if linkOrButton.text
+          include UIKit/button/button.pug
+          if linkOrButton.href
+            a.form-check__link(href=linkOrButton.href)
+              +button('check-with-link', 'button', 'link', linkOrButton.text)(class='form-check__button')
+          else
+            +button('check-with-link', 'button', 'link', linkOrButton.text)(class='form-check__button')
+      if checkDescription
+        p.form-check__description.font-base_s #{checkDescription}

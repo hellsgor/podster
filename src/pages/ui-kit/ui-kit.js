@@ -1,1 +1,1 @@
-import 'UIKit';
+import 'UIKit/form-password/form-password.js';

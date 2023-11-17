@@ -1,12 +1,9 @@
 @import 'Styles/styles.scss';
-@import 'UIKit/uikit.scss';
-@import 'Components/components.scss';
+@import '../pages/ui-kit/uikit.scss';
 
 .page-uikit {
   &__body {
     background-color: $white-2;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
     color: $main;
   }
 

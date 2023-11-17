@@ -1,0 +1,74 @@
+.form-switch {
+  display: flex;
+  column-gap: 18px;
+  width: fit-content;
+
+  &__text {
+    transition: color .15s ease-in-out;
+
+    &_left {
+      margin: 0;
+      order: 1;
+    }
+
+    &_right {
+      order: 3;
+      color: $blue-3;
+    }
+  }
+
+  &__label {
+    display: block;
+    width: 36px;
+    height: 20px;
+    border: 0.5px solid $main;
+    border-radius: 100px;
+    background-color: $white-2;
+    position: relative;
+    transition: background-color .15s ease-in-out;
+    order: 2;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-color: $main;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 2px;
+      border-radius: 100px;
+      transition: background-color .15s ease-in-out, transform .15s ease;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    transform: scale(0);
+    z-index: -10000;
+
+    &:checked + label {
+      background-color: $main;
+
+      &::before {
+        transform: translate(calc(100% + 2px), -50%);
+        background-color: $white-2;
+      }
+    }
+
+    &:checked {
+      & ~ span {
+        color: $main;
+      }
+
+      & ~ p {
+        color: $blue-3;
+      }
+    }
+  }
+}
+
+
+

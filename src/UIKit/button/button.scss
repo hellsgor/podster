@@ -1,0 +1,54 @@
+@mixin transparent-button {
+  min-width: unset;
+  background-color: transparent;
+  color: $main;
+
+  &:disabled {
+    background-color: transparent;
+  }
+  @content;
+}
+
+.button {
+  width: fit-content;
+  min-width: 144px;
+  height: fit-content;
+  min-height: 33px;
+  padding: 8px 18px;
+  outline: none;
+  border: 0;
+  border-radius: $brs-md;
+  cursor: pointer;
+
+  &_primary {
+    background-color: $main;
+    color: $white-2;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $primary-hover;
+      }
+    }
+  }
+
+  &_secondary {
+    background-color: $blue-1;
+    color: $main;
+  }
+
+  &:disabled {
+    background-color: $disabled-background;
+    color: $blue-3;
+    cursor: default;
+  }
+
+  &_transparent {
+    @include transparent-button;
+  }
+
+  &_link {
+    @include transparent-button;
+    min-height: unset;
+    padding: 0;
+  }
+}

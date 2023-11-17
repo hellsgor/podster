@@ -2,102 +2,111 @@ extends Layouts/uikit.pug
 
 block variables
   - let title = 'UI-kit';
-block styles
-block scripts 
-  script(src=require("./ui-kit.js") defer)
 block content
-  img(src=require('Img/logo.svg'), alt="Podster.fm") 
+  img(src=require('Img/logo.svg'), alt="Podster.fm")
   h1 UIKit
-  h2 Forms 
-  h3 Form control 
-  input(type="text" class="form-control" placeholder="ИНН или email") 
-  br
-  code &lt;input type="text" class="form-control"&gt;
-  p Тот же класс для других типов инпутов.
+  h2 Forms
+
+  h3 Form control
+  include UIKit/form-control/form-control.pug
+  +form-control('ИНН', 'text', 'advertiser-inn', 'Введите данные')
+
   h3 Поле для ввода пароля
-  div(class="form-password")
-    input(type="password" class="form-control" placeholder="Введите пароль") 
-    button(type="button" class="form-password__toggle-view")
-  pre
-    |&lt;div class="form-password"&gt;
-    |  &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
-    |  &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
-    |&lt;/div&gt;
-    |&lt;div class="form-password visible"&gt;
-    |  &lt;input class="form-control" type="password" placeholder="Введите пароль"/&gt;
-    |  &lt;button class="form-password__toggle-view" type="button"&gt;&lt;/button&gt;
-    |&lt;/div&gt;
+  include UIKit/form-password/form-password.pug
+  +form-control('Пароль', 'password', 'advertiser-password', 'Введите пароль')
+
   h3 Form select
-  select(class="form-select")
-    option Option
-    option Option
-    option Option
-    option Option
-    option Option
-  h3 Form label
-  label(for="formControlInput" class="form-label") Логин: 
-  br
-  code &lt;label class="form-label"&gt;&lt;/label&gt;
-  h3 Form check 
-  div(class="form-check")
-    input(type="checkbox" class="form-check-input" id="exampleCheckbox")
-    label(class="form-check-label" for="exampleCheckbox") Checkbox
-  br
-  div(class="form-check")
-    input(type="checkbox" class="form-check-input" id="exampleCheckboxChecked" checked)
-    label(class="form-check-label" for="exampleCheckboxChecked") Checkbox checked
-  br
-  pre
-    |&lt;div class="form-check"&gt;
-    |  &lt;input class="form-check-input" type="checkbox" id="exampleCheckDefault"&gt;
-    |  &lt;label class="form-check-label" for="exampleCheckDefault"&gt;
-    |    Default checkbox
-    |  &lt;/label&gt;
-    |&lt;/div&gt;
-    |&lt;div class="form-check"&gt;
-    |  &lt;input class="form-check-input" type="checkbox" id="exampleCheckChecked" checked&gt;
-    |  &lt;label class="form-check-label" for="exampleCheckChecked"&gt;
-    |    Checked checkbox
-    |  &lt;/label&gt;
-    |&lt;/div&gt;
-  h3 Form switch 
-  div(class="form-check form-switch")
-    input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitch")
-    label(class="form-check-label" for="exampleSwitch") Switch
-  br
-  div(class="form-check form-switch")
-    input(type="checkbox" class="form-check-input" role="switch" id="exampleSwitchChecked" checked)
-    label(class="form-check-label" for="exampleSwitchChecked") Switch checked
-  br
-  pre
-    |&lt;div class="form-check form-switch"&gt;
-    |  &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchDefault"&gt;
-    |  &lt;label class="form-check-label" for="exampleSwitchDefault"&gt;
-    |    Default checkbox
-    |  &lt;/label&gt;
-    |&lt;/div&gt;
-    |&lt;div class="form-check"&gt;
-    |  &lt;input class="form-check-input" type="checkbox" role="switch" id="exampleSwitchChecked" checked&gt;
-    |  &lt;label class="form-check-label" for="exampleSwitchChecked"&gt;
-    |    Checked checkbox
-    |  &lt;/label&gt;
-    |&lt;/div&gt;
-  br
-  h3 Buttons 
-  button(type="button" class="btn btn-primary") Primary
-  |&emsp;
-  button(type="button" class="btn btn-secondary") Secondary
-  |&emsp;
-  button(type="button" class="btn btn-secondary" disabled) Disabled
-  br
-  pre
-    |&lt;button class="btn btn-primary" type="button"&gt;Primary&lt;/button&gt;
-    |&lt;button class="btn btn-secondary" type="button"&gt;Secondary&lt;/button&gt;
-    |&lt;button class="btn btn-secondary" type="button" disabled="disabled"&gt;Disabled&lt;/button&gt;
-  h3 Validation
-  input(type="text" class="form-control is-invalid" placeholder="Введите код" value="1234") 
-  div(class="invalid-feedback") Неверный код
-  br
-  pre
-    |&lt;input type="text" class="form-control is-invalid"&gt;
-    |&lt;div class="invalid-feedback"&gt;Неверный код&lt;/div&gt;
+  .ui-kit__component-container.ui-kit__component-container_gorizontal
+    include UIKit/form-select/form-select.pug
+    +form-select('Example Select 1', 'example-form-select-1', false, [
+      {
+        heading: 'Заголовок 1',
+        items: [
+          {
+            value: 1,
+            text: 'Option 1',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 2,
+            text: 'Option 2',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 3,
+            text: 'Option 3',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+        ]
+      },
+      {
+        heading: 'Заголовок 2',
+        items: [
+          {
+            value: 4,
+            text: 'Option 4',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 5,
+            text: 'Option 5',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+          {
+            value: 6,
+            text: 'Option 6',
+            description: 'Lorem ipsum dolor sit amet.'
+          },
+        ]
+      },
+    ], 'Default Option')
+    +form-select('Example Select 2', 'example-form-select-2', false, [
+      {value: 1, text: 'Option 1', description: 'Lorem ipsum dolor sit amet.'},
+      {value: 2, text: 'Option 2', description: 'Lorem ipsum dolor sit amet.'},
+      {value: 3, text: 'Option 3', description: 'Lorem ipsum dolor sit amet.'}
+    ], 'Default Option')
+
+  h3 Form check
+  .ui-kit__component-container.ui-kit__component-container_vertical
+    .ui-kit__component-container.ui-kit__component-container_gorizontal
+      include UIKit/form-check/form-check.pug
+      +form-check('test-checkbox-1', 'Просто checkbox', {})
+      +form-check('test-checkbox-2', 'Checkbox и', {
+        text: 'ссылка в нём',
+        href: 'https://google.com',
+      })
+      +form-check('test-checkbox-3', 'Checkbox и', {
+        text: 'кнопка',
+      })
+      +form-check('test-checkbox-4', '', {
+        text: 'Только кнопка',
+      })
+    .ui-kit__component-container.ui-kit__component-container_gorizontal
+      +form-check('test-checkbox-5', '', {
+        text: 'Только ссылка',
+        href: 'https://google.com'
+      })
+      +form-check('test-checkbox-6', 'Checkbox с описанием', {}, 'Lorem ipsum dolor sit amet.')
+      +form-check('test-checkbox-7', 'Checkbox c описанием и', {
+        text: 'кнопкой',
+      }, 'Lorem ipsum dolor sit amet.')
+
+  h3 Form switch
+  .ui-kit__component-container.ui-kit__component-container_gorizontal
+    include UIKit/form-switch/form-switch.pug
+    +form-switch('test-switch-1', 'Право', 'Лево')
+    +form-switch('test-switch-2', 'Право')
+
+  h3 Buttons
+  .ui-kit__component-container.ui-kit__component-container_gorizontal
+    include UIKit/button/button.pug
+    +button('test-button-primary', 'button', 'primary', 'Primary')
+    +button('test-button-secondary', 'button', 'secondary', 'Secondary')
+    +button('test-button-primary-disabled', 'button', 'primary', 'Disabled Primary')(disabled)
+    +button('test-button-secondary-disabled', 'button', 'secondary', 'Disabled Secondary')(disabled)
+    +button('test-button-transparent', 'button', 'transparent', 'Transparent Button')
+    +button('test-button-transparent-disabled', 'button', 'transparent', 'Disabled Transparent Button')(disabled)
+    +button('test-button-link', 'button', 'link', 'Looks like a link')
+block styles
+block scripts
+  script(src=require('./ui-kit') defer)
