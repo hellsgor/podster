@@ -1,3 +1,5 @@
 import {prepareFormSelect} from 'UIKit/form-select/_prepare-form-select';
 
-prepareFormSelect(document.querySelectorAll('.form-select'));
+const allFormSelect = document.querySelectorAll('.form-select');
+
+prepareFormSelect(allFormSelect);
