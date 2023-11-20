@@ -2,27 +2,8 @@
   display: flex;
   flex-direction: column;
 
-  &__mobile {
-    //TODO: убрать следующие 4 строки когда появится функция для селекта
-    position: absolute;
-    z-index: -10000;
-    visibility: hidden;
-    transform: scale(0);
-    @media(max-width: 1024px) {
-      //TODO: убрать следующие 4 строки когда появится функция для селекта
-      position: static;
-      z-index: 0;
-      visibility: visible;
-      transform: scale(1);
-    }
-  }
-
   &__desktop {
     position: relative;
-  }
-
-  &__pseudo {
-    cursor: pointer;
   }
 
   &__select {

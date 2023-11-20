@@ -1,16 +1,29 @@
 import {showDropdown} from 'UIKit/form-select/_show-dropdown';
+import {isMobileDevice} from 'Utils/isMobileDevice.mjs';
 
 document.querySelectorAll('.form-select').forEach((select) => {
   const dropdown = select.querySelector('.form-select__dropdown');
   const dropdownChecks = dropdown.querySelectorAll('.form-check');
   const arrow = select.querySelector('.form-select__arrow');
 
-  select
-    .querySelector('.form-select__pseudo')
-    .addEventListener('click', (event) => {
-      event.preventDefault();
-      showDropdown(dropdown, arrow);
-    });
+  if (isMobileDevice()) {
+    select
+      .querySelector('.form-select__desktop')
+      .classList.add('visually-hidden');
+    select
+      .querySelector('.form-select__mobile')
+      .classList.remove('visually-hidden');
+  } else {
+    select
+      .querySelector('.form-select__mobile')
+      .classList.add('visually-hidden');
+    select
+      .querySelector('button.form-select__select')
+      .addEventListener('click', (event) => {
+        event.preventDefault();
+        showDropdown(dropdown, arrow);
+      });
+  }
 
   dropdown.querySelectorAll('input.form-check__box').forEach((formCheck) => {
     formCheck.removeAttribute('name');
@@ -19,14 +32,12 @@ document.querySelectorAll('.form-select').forEach((select) => {
   dropdownChecks.forEach((dropdownCheck) => {
     dropdownCheck.addEventListener('change', (event) => {
       if (select.querySelector('select').multiple === true) {
-        console.log('multiple');
         select
           .querySelector(
             `select option[value="${event.target.dataset.optionValue}"]`
           )
           .setAttribute('selected', '');
       } else {
-        console.log('mono');
         select.querySelectorAll('select option').forEach((option) => {
           if (option.hasAttribute('selected')) {
             option.removeAttribute('selected');

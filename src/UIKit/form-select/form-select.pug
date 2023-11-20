@@ -27,8 +27,7 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
             option(value=optionsItem.value) #{optionsItem.text ? optionsItem.text : optionsItem.value}
 
     .form-select__desktop
-      .form-select__select.form-select__pseudo(type=button, id=`pseudo-${selectName}`)
-        span #{placeholder}
+      button.form-select__select(type=button, id=`pseudo-${selectName}`) #{placeholder}
         .form-select__arrow
           include Icons/arrow-down.pug
 
