@@ -7,7 +7,7 @@ mixin dropdown (options, selectName)
           p.dropdown__options-heading.font-base_xl #{option.heading}
           each subOption, subOptionIndex  in option.items
             +form-check(
-              selectName + '-opt-' + subOptionIndex,
+              selectName + '-opt-' + optionIndex + '-' + subOptionIndex,
               subOption.text,
               {},
               subOption.description)(data-option-value=subOption.value)

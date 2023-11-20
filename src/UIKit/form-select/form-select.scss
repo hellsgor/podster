@@ -21,6 +21,10 @@
     position: relative;
   }
 
+  &__pseudo {
+    cursor: pointer;
+  }
+
   &__select {
     display: flex;
     width: 100%;

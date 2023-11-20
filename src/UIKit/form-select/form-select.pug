@@ -1,29 +1,34 @@
 mixin form-select(labelText, selectName, multiple, options, placeholder)
 
   //- labelText: string
-    - selectName: string
-    - multiple: boolean
-    - options: [],
-    - placeholder: string
+      - selectName: string
+      - multiple: boolean
+      - options: [],
+      - placeholder: string
 
   .form-select
     include UIKit/control-label/control-label.pug
     +control-label(labelText, selectName)(class='form-select__label')
 
     .form-select__mobile
-      select.form-select__select(name=selectName, id=selectName, multiple=multiple)&attributes(
-        attributes)
+      select.form-select__select(
+        name=selectName,
+        id=selectName,
+        multiple=multiple,
+      )&attributes(attributes)
         if placeholder
           option(value='', disabled, selected) #{placeholder}
         each optionsItem in options
           if optionsItem.heading
             optgroup(label=optionsItem.heading)
-            each subOptionItem in optionsItem.items
-              option(value=subOptionItem.value) #{subOptionItem.text ? subOptionItem.text : subOptionItem.value}
-          option(value=optionsItem.value) #{optionsItem.text ? optionsItem.text : optionsItem.value}
+              each subOptionItem in optionsItem.items
+                option(value=subOptionItem.value) #{subOptionItem.text ? subOptionItem.text : subOptionItem.value}
+          else
+            option(value=optionsItem.value) #{optionsItem.text ? optionsItem.text : optionsItem.value}
 
     .form-select__desktop
-      button.form-select__select(type=button, id='pseudo-select', data-multiple-select=multiple) #{placeholder}
+      .form-select__select.form-select__pseudo(type=button, id=`pseudo-${selectName}`)
+        span #{placeholder}
         .form-select__arrow
           include Icons/arrow-down.pug
 
