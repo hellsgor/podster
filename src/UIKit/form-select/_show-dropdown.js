@@ -4,7 +4,6 @@ export function showDropdown(dropdown, arrow) {
   } else {
     dropdown.classList.add('visually-hidden');
   }
-
   if (arrow.classList.contains('form-select__arrow_rotated')) {
     arrow.classList.remove('form-select__arrow_rotated');
   } else {

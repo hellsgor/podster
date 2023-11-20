@@ -4,7 +4,10 @@ import {isMobileDevice} from 'Utils/isMobileDevice.mjs';
 document.querySelectorAll('.form-select').forEach((select) => {
   const dropdown = select.querySelector('.form-select__dropdown');
   const dropdownChecks = dropdown.querySelectorAll('.form-check');
-  const arrow = select.querySelector('.form-select__arrow');
+  const arrowDesktop = select.querySelector(
+    'button.form-select__select .form-select__arrow'
+  );
+  const realSelect = select.querySelector('select');
 
   if (isMobileDevice()) {
     select
@@ -13,6 +16,12 @@ document.querySelectorAll('.form-select').forEach((select) => {
     select
       .querySelector('.form-select__mobile')
       .classList.remove('visually-hidden');
+    realSelect.addEventListener('change', () => {
+      if (!realSelect.hasAttribute('multiple')) {
+        select.querySelector('.form-select__placeholder').textContent =
+          realSelect.querySelector(`option[value="${realSelect.value}"]`).text;
+      }
+    });
   } else {
     select
       .querySelector('.form-select__mobile')
@@ -21,7 +30,7 @@ document.querySelectorAll('.form-select').forEach((select) => {
       .querySelector('button.form-select__select')
       .addEventListener('click', (event) => {
         event.preventDefault();
-        showDropdown(dropdown, arrow);
+        showDropdown(dropdown, arrowDesktop);
       });
   }
 
@@ -54,16 +63,16 @@ document.querySelectorAll('.form-select').forEach((select) => {
           }
         });
         setTimeout(() => {
-          showDropdown(dropdown, arrow);
+          showDropdown(dropdown, arrowDesktop);
         }, 150);
       }
     });
   });
 
   document.addEventListener('click', (event) => {
-    if (!dropdown.classList.contains('visually-hidden')) {
+    if (!dropdown.classList.contains('visually-hidden') && !isMobileDevice()) {
       if (event.composedPath().includes(select) === false) {
-        showDropdown(dropdown, arrow);
+        showDropdown(dropdown, arrowDesktop);
       }
     }
   });

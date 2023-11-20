@@ -1,25 +1,30 @@
+@mixin select-props {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  border: 1px solid $blue-1;
+  border-radius: $brs-sm;
+  align-items: center;
+  justify-content: space-between;
+  color: $main;
+  padding: 0 18px;
+  background-color: $blue-1;
+}
+
 .form-select {
   display: flex;
   flex-direction: column;
 
-  &__desktop {
+  &__desktop,
+  &__mobile {
     position: relative;
   }
 
   &__select {
-    display: flex;
-    width: 100%;
+    @include select-props;
     min-width: 300px;
-    height: 45px;
-    padding: 0 18px;
-    border: 1px solid $blue-1;
-    border-radius: $brs-sm;
-    align-items: center;
-    justify-content: space-between;
     text-align: left;
     background-color: $blue-1;
-    color: $main;
-    appearance: none;
 
     &:focus {
       outline: none;
@@ -30,6 +35,15 @@
         border-color: $main;
       }
     }
+  }
+
+  &__subsidiary {
+    @include select-props;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    pointer-events: none;
   }
 
   &__arrow {

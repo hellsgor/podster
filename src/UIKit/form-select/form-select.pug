@@ -16,8 +16,6 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
         id=selectName,
         multiple=multiple,
       )&attributes(attributes)
-        if placeholder
-          option(value='', disabled, selected) #{placeholder}
         each optionsItem in options
           if optionsItem.heading
             optgroup(label=optionsItem.heading)
@@ -25,6 +23,10 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
                 option(value=subOptionItem.value) #{subOptionItem.text ? subOptionItem.text : subOptionItem.value}
           else
             option(value=optionsItem.value) #{optionsItem.text ? optionsItem.text : optionsItem.value}
+      if !multiple
+        .form-select__subsidiary
+          span.form-select__placeholder #{placeholder}
+
 
     .form-select__desktop
       button.form-select__select(type=button, id=`pseudo-${selectName}`) #{placeholder}
