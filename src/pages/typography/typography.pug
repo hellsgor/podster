@@ -1,0 +1,64 @@
+extends Layouts/uikit.pug
+
+block variables
+  - let title = 'Typography';
+block content
+  img(src=require('Img/logo.svg'), alt="Podster.fm")
+  h1 Typography
+
+  h2 Headings
+  .typography.typography__headings
+    .typography__row
+      .typography__column_left
+        p.heading.heading-1 H1 / .heading.heading-1
+      .typography__column_right
+        h1 Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p.heading.heading-2 H2 / .heading.heading-2
+      .typography__column_right
+        h2 Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p.heading.heading-3 H3 / .heading.heading-3
+      .typography__column_right
+        h3 Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p.heading.heading-3 H3.heading-3_medium / .heading.heading-3_medium
+      .typography__column_right
+        h3.heading-3_medium Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p.heading.heading-4 H4 / .heading.heading-4
+      .typography__column_right
+        h4 Lorem ipsum dolor sit amet.
+
+  h2 Body text
+  .typography.typography__body-text
+    .typography__row
+      .typography__column_left
+        p body / .font-base
+      .typography__column_right
+        span Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p .font-base.font-base_medium
+      .typography__column_right
+        span.font-base.font-base_medium Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p .font-base.font-base_xl
+      .typography__column_right
+        span.font-base.font-base_xl Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p .font-base.font-base_l
+      .typography__column_right
+        span.font-base.font-base_l Lorem ipsum dolor sit amet.
+    .typography__row
+      .typography__column_left
+        p .font-base.font-base_s
+      .typography__column_right
+        span.font-base.font-base_s Lorem ipsum dolor sit amet.
+

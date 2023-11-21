@@ -1,0 +1,41 @@
+.typography {
+  display: flex;
+  margin-top: 16px;
+  flex-direction: column;
+  row-gap: 16px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &__row {
+    display: flex;
+    column-gap: 32px;
+  }
+
+  &__headings {
+    .typography__column {
+      &_left {
+        width: 700px;
+      }
+    }
+  }
+
+  &__body-text {
+    .typography__column {
+      &_left {
+        width: 220px;
+      }
+    }
+  }
+
+}

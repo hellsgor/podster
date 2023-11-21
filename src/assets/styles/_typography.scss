@@ -6,6 +6,10 @@ body,
   font-weight: 400;
   font-style: normal;
   line-height: normal;
+
+  @include media-576 {
+    font-size: 10px;
+  }
 }
 
 //.font-base.font-base_medium = "Body 3 medium" в макете
@@ -17,23 +21,36 @@ body,
 .font-base_xl {
   font-size: 18px;
   font-weight: 500;
+
+  @include media-576 {
+    font-size: 14px;
+  }
 }
 
 //.font-base.font-base_l = "Body 2" в макете
 .font-base_l {
   font-size: 16px;
   font-weight: 500;
+
+  @include media-576 {
+    font-size: 12px;
+  }
 }
 
 //.font-base.font-base_s = "Small text" в макете
 .font-base_s {
   font-size: 12px;
+
+  @include media-576 {
+    font-size: 10px;
+  }
 }
 
 h1,
 h2,
 h3,
-h4, {
+h4,
+.heading {
   margin: 0;
   font-weight: 600;
 }
@@ -41,16 +58,28 @@ h4, {
 h1,
 .heading-1 {
   font-size: 32px;
+
+  @include media-576 {
+    font-size: 20px;
+  }
 }
 
 h2,
 .heading-2 {
   font-size: 28px;
+
+  @include media-576 {
+    font-size: 16px;
+  }
 }
 
 h3,
 .heading-3 {
   font-size: 24px;
+
+  @include media-576 {
+    font-size: 14px;
+  }
 }
 
 .heading-3_medium {
@@ -60,4 +89,8 @@ h3,
 h4,
 .heading-4 {
   font-size: 20px;
+
+  @include media-576 {
+    font-size: 18px;
+  }
 }

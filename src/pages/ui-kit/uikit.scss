@@ -8,6 +8,17 @@
 @import 'UIKit/dropdown/dropdown.scss';
 @import 'UIKit/form-control-error/form-control-error.scss';
 
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 60px;
+}
+
+h3 {
+  margin-bottom: 16px;
+}
+
 .ui-kit {
   &__component-container {
     display: flex;
