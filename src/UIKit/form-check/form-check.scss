@@ -5,10 +5,10 @@
   align-items: center;
 
   &__box {
-    width: 24px;
     height: 24px;
     border: 1px solid $blue-3;
     border-radius: $brs-sm;
+    flex: 0 0 24px;
     background-color: $white-2;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,6 +23,7 @@
 
   &__wrapper {
     padding-left: 14px;
+    flex: 0 1 100%;
   }
 
   &__label {
@@ -30,6 +31,10 @@
     flex-wrap: nowrap;
     align-items: center;
     column-gap: 4px;
+
+    button {
+      text-align: left;
+    }
   }
 
   &__description {
