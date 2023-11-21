@@ -12,6 +12,7 @@ module.exports = {
     auth: './src/pages/auth/auth.pug',
     registration: './src/pages/registration/registration.pug',
     uiKit: './src/pages/ui-kit/ui-kit.pug',
+    typography: './src/pages/typography/typography.pug',
     authorProfile: './src/pages/author/profile/profile.pug',
     advertiserProfile: './src/pages/advertiser/profile/profile.pug'
   },
