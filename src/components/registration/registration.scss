@@ -1,13 +1,69 @@
 @import 'UIKit/form-control/form-control.scss';
 @import 'UIKit/form-password/form-password.scss';
-@import 'UIKit/button/button.scss';
 @import 'UIKit/form-check/form-check.scss';
 @import 'UIKit/form-switch/form-switch.scss';
 @import 'UIKit/form-select/form-select.scss';
 @import 'UIKit/control-label/control-label.scss';
 @import 'UIKit/dropdown/dropdown.scss';
 @import 'UIKit/form-control-error/form-control-error.scss';
+@import 'UIKit/button/button.scss';
+
+body.page-auth__body {
+  justify-content: unset;
+}
 
 .registration {
+  display: flex;
+  max-width: 435px;
+  padding: 140px 0;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
 
+  &__form {
+    display: flex;
+    //overflow-y: scroll;
+    width: 100%;
+    //max-height: 800px;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 24px;
+  }
+
+  &__controls {
+    display: flex;
+    max-width: 350px;
+    flex-direction: column;
+    row-gap: 16px;
+
+    input[name="user-inn"],
+    input[name="user-ogrn"],
+    input[name="user-okved"] {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      -moz-appearance: textfield;
+    }
+  }
+
+  &__from-back-block {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__to-auth {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+
+    p {
+      margin: 0;
+      color: $blue-3;
+    }
+  ;
+  }
 }

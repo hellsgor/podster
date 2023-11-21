@@ -1,21 +1,57 @@
 section.registration
   h1.registration__title.heading-1 Регистрация
-  h3.registration__sub-title.heading-3.heading-3_medium Введите данные для регистрации
 
   form.registration__form(name="registration-form" id="registration-form")
-    include UIKit/form-select/form-select.pug
-    +form-select('Тип рекламодателя', 'user-reg-type', false, [
-      {
-        value: 1,
-        text: 'Самозанятый',
-      },
-      {
-        value: 2,
-        text: 'Юридическое лицо',
-      },
-      {
-        value: 3,
-        text: 'Индивидуальный предприниматель',
-      }
-    ], 'Выберите из списка')
+    h3.registration__sub-title.heading-3.heading-3_medium Введите данные для регистрации
+
+    .registration__controls
+      include UIKit/form-select/form-select.pug
+      +form-select('Тип рекламодателя', 'user-reg-type', false, [
+        {
+          value: '',
+          text: 'Самозанятый',
+        },
+        {
+          value: '',
+          text: 'Юридическое лицо',
+        },
+        {
+          value: '',
+          text: 'Индивидуальный предприниматель',
+        }
+      ], 'Выберите из списка')
+
+      include UIKit/form-control/form-control.pug
+      +form-control('ИНН', 'number', 'user-inn', 'Введите данные')
+
+      // .visually-hidden
+      .registration__from-back-block
+        +form-control('ФИО', 'text', 'user-name', '')(disabled)
+        +form-control('ОГРН', 'number', 'user-ogrn', '')(disabled)
+        +form-control('ОКВЭД', 'number', 'user-okved', '')(disabled)
+
+      +form-control('Электронная почта', 'email', 'user-email', 'Введите данные')
+
+      include UIKit/form-password/form-password.pug
+      +form-control('Пароль', 'password', 'user-password', 'Введите пароль')
+      +form-control('Повторите пароль', 'password', 'user-password-repeated', 'Введите пароль')
+
+      include UIKit/form-check/form-check.pug
+      +form-check('agreement-data-processing', '', {
+        text: 'Ознакомиться с соглашением на обработку персональных данных',
+      })
+
+      +form-check('agreement-contract', '', {
+        text: 'Ознакомиться с договором (ссылка на договор)',
+      })
+
+    include UIKit/button/button.pug
+    +button('registration-form-submit', 'button', 'primary', 'Регистрация')(disabled)
+
+  .registration__to-auth
+    p Есть аккаунт?
+    a(href='./auth.html')
+      +button('auth-button', 'button', 'link', 'Авторизация')
+
+
 
