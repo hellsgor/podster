@@ -26,6 +26,10 @@
     text-align: left;
     background-color: $blue-1;
 
+    &_not-selected {
+      color: $blue-3;
+    }
+
     &:focus {
       outline: none;
     }
@@ -47,15 +51,19 @@
   }
 
   &__arrow {
+    position: absolute;
+    top: 50%;
+    right: 18px;
     display: flex;
     width: 18px;
     height: 18px;
     align-items: center;
     justify-content: center;
+    transform: translateY(-50%);
     transition: transform .15s ease-in-out;
 
     &_rotated {
-      transform: rotate(180deg);
+      transform: translateY(-50%) rotate(180deg);
     }
   }
 

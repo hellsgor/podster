@@ -11,7 +11,7 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
     +control-label(labelText, selectName)(class='form-select__label')
 
     .form-select__mobile
-      select.form-select__select(
+      select.form-select__select.form-select__select_not-selected(
         name=selectName,
         id=selectName,
         multiple=multiple,
@@ -25,13 +25,13 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
             option(value=optionsItem.value) #{optionsItem.text ? optionsItem.text : optionsItem.value}
       if !multiple
         .form-select__subsidiary
-          span.form-select__placeholder #{placeholder}
+          span.form-select__placeholder.form-select__select_not-selected #{placeholder}
 
 
     .form-select__desktop
-      button.form-select__select(type=button, id=`pseudo-${selectName}`) #{placeholder}
-        .form-select__arrow
-          include Icons/arrow-down.pug
+      button.form-select__select.form-select__select_not-selected(type=button, id=`pseudo-${selectName}`) #{placeholder}
+      .form-select__arrow
+        include Icons/arrow-down.pug
 
       include UIKit/dropdown/dropdown.pug
       +dropdown(options, selectName)(class='form-select__dropdown')
