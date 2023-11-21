@@ -1,0 +1,8 @@
+extends Layouts/auth.pug
+
+block variables
+  - let title = 'Регистрация';
+block scripts
+  script(src=require('./registration.js') defer)
+block content
+  include Components/registration/registration.pug

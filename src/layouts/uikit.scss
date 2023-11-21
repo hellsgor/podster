@@ -1,6 +1,13 @@
 @import 'Styles/styles.scss';
 @import '../pages/ui-kit/uikit.scss';
 
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 32px;
+}
+
 .page-uikit {
   &__body {
     background-color: $white-2;
@@ -12,14 +19,14 @@
   }
 
   pre {
-    background-color: $white-1;
-    border-radius: $brs-md;
     padding: 16px;
+    border-radius: $brs-md;
+    background-color: $white-1;
   }
 
   code {
-    background-color: $white-1;
-    border-radius: $brs-sm;
     padding: 8px;
+    border-radius: $brs-sm;
+    background-color: $white-1;
   }
 }

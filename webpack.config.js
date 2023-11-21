@@ -10,6 +10,7 @@ module.exports = {
   mode: 'development',
   entry: {
     auth: './src/pages/auth/auth.pug',
+    registration: './src/pages/registration/registration.pug',
     uiKit: './src/pages/ui-kit/ui-kit.pug',
     authorProfile: './src/pages/author/profile/profile.pug',
     advertiserProfile: './src/pages/advertiser/profile/profile.pug'

@@ -5,9 +5,13 @@ document.querySelectorAll('.form-select').forEach((select) => {
   const dropdown = select.querySelector('.form-select__dropdown');
   const dropdownChecks = dropdown.querySelectorAll('.form-check');
   const arrowDesktop = select.querySelector(
-    'button.form-select__select .form-select__arrow'
+    '.form-select__desktop .form-select__arrow'
   );
   const realSelect = select.querySelector('select');
+  const pseudoSelect = select.querySelector('button.form-select__select');
+  const realSelectPlaceholder = select.querySelector(
+    '.form-select__mobile .form-select__placeholder'
+  );
 
   if (isMobileDevice()) {
     select
@@ -18,8 +22,22 @@ document.querySelectorAll('.form-select').forEach((select) => {
       .classList.remove('visually-hidden');
     realSelect.addEventListener('change', () => {
       if (!realSelect.hasAttribute('multiple')) {
-        select.querySelector('.form-select__placeholder').textContent =
-          realSelect.querySelector(`option[value="${realSelect.value}"]`).text;
+        realSelectPlaceholder.textContent = realSelect.querySelector(
+          `option[value="${realSelect.value}"]`
+        ).text;
+        realSelectPlaceholder.classList.remove(
+          'form-select__select_not-selected'
+        );
+      } else {
+        if (
+          Array.from(realSelect.querySelectorAll('option')).filter(
+            (option) => option.selected
+          ).length > 0
+        ) {
+          realSelect.classList.remove('form-select__select_not-selected');
+        } else {
+          realSelect.classList.add('form-select__select_not-selected');
+        }
       }
     });
   } else {
@@ -40,12 +58,22 @@ document.querySelectorAll('.form-select').forEach((select) => {
 
   dropdownChecks.forEach((dropdownCheck) => {
     dropdownCheck.addEventListener('change', (event) => {
-      if (select.querySelector('select').multiple === true) {
-        select
+      realSelect.classList.remove('form-select__select_not-selected');
+      select
+        .querySelector('button.form-select__select')
+        .classList.remove('form-select__select_not-selected');
+
+      if (realSelect.multiple === true) {
+        realSelect
           .querySelector(
             `select option[value="${event.target.dataset.optionValue}"]`
           )
           .setAttribute('selected', '');
+        const selectedOptions = realSelect.querySelectorAll('option[selected]');
+        pseudoSelect.textContent =
+          selectedOptions.length > 0 && selectedOptions.length <= 1
+            ? selectedOptions[0].text
+            : `Выбрано: ${selectedOptions.length}`;
       } else {
         select.querySelectorAll('select option').forEach((option) => {
           if (option.hasAttribute('selected')) {
@@ -53,6 +81,9 @@ document.querySelectorAll('.form-select').forEach((select) => {
           }
           if (option.value === event.target.dataset.optionValue) {
             option.setAttribute('selected', '');
+            pseudoSelect.textContent = realSelect.querySelector(
+              `option[value="${realSelect.value}"]`
+            ).text;
           }
         });
         dropdownChecks.forEach((dropdownCheck) => {
