@@ -19,16 +19,16 @@
     @media(hover: hover) {
       &:hover {
         border-color: $main;
+
+        &:disabled {
+          border-color: $blue-1;
+        }
       }
     }
 
     &::placeholder {
       color: $blue-3;
     }
-  }
-
-  &__error {
-
   }
 
   &_with-error {
