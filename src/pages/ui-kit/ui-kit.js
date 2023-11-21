@@ -1,1 +1,1 @@
-import 'UIKit/index.js';
+import 'UIKit';
