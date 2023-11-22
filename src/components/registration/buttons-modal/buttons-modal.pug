@@ -1,0 +1,6 @@
+mixin buttons-modal(blockID)
+  .buttons-modal&attributes(attributes)
+    .buttons-modal__wrapper
+      include UIKit/button/button.pug
+      +button(`#{blockID}-cancel-button`, 'button', 'secondary', 'Отменить')
+      +button(`#{blockID}-accept-button`, 'button', 'primary', 'Принять')(disabled)
