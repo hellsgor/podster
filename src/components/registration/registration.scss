@@ -8,6 +8,8 @@
 @import 'UIKit/form-control-error/form-control-error.scss';
 @import 'UIKit/button/button.scss';
 
+@import './contract-modal/contract-modal.scss';
+
 body.page-auth__body {
   justify-content: flex-start;
 }

@@ -53,5 +53,10 @@ section.registration
     a(href='./auth.html')
       +button('auth-button', 'button', 'link', 'Авторизация')
 
+  .registration__modal.registration__contract
+    include ./contract-modal/contract-modal.pug
+    +modal('Договор', true)
+
+
 
 

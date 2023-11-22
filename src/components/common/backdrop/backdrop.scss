@@ -2,17 +2,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -10000;
-  visibility: hidden;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
+  visibility: visible;
+  opacity: 0.20;
+  width: 100vw;
+  height: 100vh;
   background-color: black;
+  transition: opacity ease-in-out 400ms;
 
   &_visible {
-    z-index: $backdrop-z-index;
-    visibility: visible;
-    opacity: 0.20;
-    transition: opacity ease-in-out 400ms;
+
+
   }
 }
