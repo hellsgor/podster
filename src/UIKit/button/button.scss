@@ -51,4 +51,8 @@
     min-height: unset;
     padding: 0;
   }
+
+  @include media-576 {
+    font-size: 14px;
+  }
 }

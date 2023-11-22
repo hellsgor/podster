@@ -62,7 +62,6 @@ document.querySelectorAll('.form-select').forEach((select) => {
       select
         .querySelector('button.form-select__select')
         .classList.remove('form-select__select_not-selected');
-
       if (realSelect.multiple === true) {
         realSelect
           .querySelector(

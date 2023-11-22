@@ -19,6 +19,12 @@
       background-color: $main;
       background-image: url('Icons/check.svg');
     }
+
+    @include media-576 {
+      height: 16px;
+      flex-basis: 16px;
+      background-size: 16px;
+    }
   }
 
   &__wrapper {
@@ -39,5 +45,15 @@
   &__description {
     margin: 0;
     color: $blue-3;
+  }
+
+  button {
+    @include media-576 {
+      font-size: 12px;
+    }
+  }
+
+  @include media-576 {
+    align-items: flex-start;
   }
 }

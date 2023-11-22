@@ -29,6 +29,12 @@
     &::placeholder {
       color: $blue-3;
     }
+
+    @include media-576 {
+      height: 32px;
+      padding: 0 12px;
+      font-size: 12px;
+    }
   }
 
   &_with-error {

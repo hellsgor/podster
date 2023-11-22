@@ -26,6 +26,8 @@ mixin form-select(labelText, selectName, multiple, options, placeholder)
       if !multiple
         .form-select__subsidiary
           span.form-select__placeholder.form-select__select_not-selected #{placeholder}
+          .form-select__arrow(data-mobile-arrow='true')
+            include Icons/arrow-down.pug
 
 
     .form-select__desktop

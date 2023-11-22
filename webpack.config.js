@@ -63,7 +63,8 @@ module.exports = {
       NodeModules: path.join(__dirname, './node_modules/'),
       Utils: path.join(__dirname, './src/utils/'),
       Mixins: path.join(__dirname, './src/assets/pug/mixins/'),
-      JSON: path.join(__dirname, './src/assets/json'),
+      JSON: path.join(__dirname, './src/assets/json/'),
+      Constants: path.join(__dirname, './src/constants/'),
     },
   },
   plugins: [
