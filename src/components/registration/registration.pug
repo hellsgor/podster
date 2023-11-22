@@ -8,15 +8,15 @@ section.registration
       include UIKit/form-select/form-select.pug
       +form-select('Тип рекламодателя', 'user-reg-type', false, [
         {
-          value: '1',
+          value: 'natural_person',
           text: 'Самозанятый',
         },
         {
-          value: '2',
+          value: 'legal_person',
           text: 'Юридическое лицо',
         },
         {
-          value: '3',
+          value: 'individual_entrepreneur',
           text: 'Индивидуальный предприниматель',
         }
       ], 'Выберите из списка')
