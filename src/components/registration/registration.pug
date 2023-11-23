@@ -54,7 +54,7 @@ section.registration
       +button('auth-button', 'button', 'link', 'Авторизация')
 
   include ./contract-modal/contract-modal.pug
-  +modal('Договор', true)(class='registration__modal registration__contract')
+  +modal('Договор', true)(class='registration__modal modal_hidden modal_fade', id='contract-modal')
 
 
 
