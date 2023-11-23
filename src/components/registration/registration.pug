@@ -39,11 +39,11 @@ section.registration
       include UIKit/form-check/form-check.pug
       +form-check('agreement-data-processing', '', {
         text: 'Ознакомиться с соглашением на обработку персональных данных',
-      })
+      })('data-modal-id'='agreement-data-processing-modal')
 
       +form-check('agreement-contract', '', {
         text: 'Ознакомиться с договором (ссылка на договор)',
-      })
+      })('data-modal-id'='contract-modal')
 
     include UIKit/button/button.pug
     +button('registration-form-submit', 'button', 'primary', 'Регистрация')(disabled)
