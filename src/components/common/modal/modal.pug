@@ -11,5 +11,5 @@ mixin modal(title, isCloseButton=true)
 
       block content
       if isCloseButton
-        .modal__close-button
+        .modal__close-button(id='modal-close-button')
           include Icons/close.pug
