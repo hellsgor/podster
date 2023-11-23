@@ -2,14 +2,16 @@ import 'UIKit/index.js';
 import 'Constants/index.js';
 import 'Components/registration/buttons-modal/buttons-modal.js';
 import 'Components/common/modal/modal.js';
-import {showModal} from 'Components/common/modal/_show-modal';
 import {REGISTRATION_IDS} from 'Constants/names-and-ids';
+import {addListenerForModal} from 'Components/registration/helpers/_addListenerForModal';
 
-const agreementContractButton = document.getElementById(
-  REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_AGREEMENT_CONTRACT_BUTTON
+addListenerForModal(
+  REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_AGREEMENT_CONTRACT_BUTTON,
+  REGISTRATION_IDS.REGISTRATION_MODALS.CONTRACT
 );
 
-agreementContractButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  showModal(REGISTRATION_IDS.REGISTRATION_MODALS.CONTRACT_MODAL);
-});
+addListenerForModal(
+  REGISTRATION_IDS.REGISTRATION_CONTROLS
+    .ADVERTISER_AGREEMENT_DATA_PROCESSING_BUTTON,
+  REGISTRATION_IDS.REGISTRATION_MODALS.AGREEMENT
+);

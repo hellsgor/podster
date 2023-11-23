@@ -39,7 +39,7 @@ section.registration
       include UIKit/form-check/form-check.pug
       +form-check('agreement-data-processing', '', {
         text: 'Ознакомиться с соглашением на обработку персональных данных',
-      })('data-modal-id'='agreement-data-processing-modal')
+      })('data-modal-id'='agreement-modal')
 
       +form-check('agreement-contract', '', {
         text: 'Ознакомиться с договором (ссылка на договор)',
@@ -53,7 +53,10 @@ section.registration
     a(href='./auth.html')
       +button('auth-button', 'button', 'link', 'Авторизация')
 
-  include ./contract-modal/contract-modal.pug
+  include ./_agreement.pug
+  +modal('Соглашение', true)(class='registration__modal modal_hidden modal_fade', id='agreement-modal')
+
+  include ./_contract.pug
   +modal('Договор', true)(class='registration__modal modal_hidden modal_fade', id='contract-modal')
 
 

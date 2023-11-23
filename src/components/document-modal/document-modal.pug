@@ -1,0 +1,10 @@
+extends Components/common/modal/modal.pug
+
+block content
+  .document-modal(id='overflow-block')
+
+    .document-modal__document-text(id='scrolling-block')
+      block doc-content
+
+  include Components/registration/buttons-modal/buttons-modal.pug
+  +buttons-modal()(class='document-modal__document-buttons')
