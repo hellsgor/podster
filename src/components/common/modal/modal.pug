@@ -10,6 +10,6 @@ mixin modal(title, isCloseButton=true)
         h2.modal__title #{title}
 
       block content
+
       if isCloseButton
         .modal__close-button(id='modal-close-button')
-          include Icons/close.pug
