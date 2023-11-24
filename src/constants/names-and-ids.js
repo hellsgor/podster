@@ -1,4 +1,5 @@
 export const REGISTRATION_IDS = {
+  REGISTRATION_FORM: 'registration-form',
   REGISTRATION_CONTROLS: {
     ADVERTISER_TYPE: 'user-reg-type',
     ADVERTISER_INN: 'user-inn',

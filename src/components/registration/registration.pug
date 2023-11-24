@@ -19,31 +19,31 @@ section.registration
           value: 'individual_entrepreneur',
           text: 'Индивидуальный предприниматель',
         }
-      ], 'Выберите из списка')
+      ], 'Выберите из списка')('data-must-be-validated'='true')
 
       include UIKit/form-control/form-control.pug
-      +form-control('ИНН', 'number', 'user-inn', 'Введите данные')
+      +form-control('ИНН', 'number', 'user-inn', 'Введите данные')('data-must-be-validated'='true')
 
       // .visually-hidden
       .registration__from-back-block.visually-hidden
-        +form-control('ФИО', 'text', 'user-name', '')(disabled)
-        +form-control('ОГРН', 'number', 'user-ogrn', '')(disabled)
-        +form-control('ОКВЭД', 'number', 'user-okved', '')(disabled)
+        +form-control('ФИО', 'text', 'user-name', '')(disabled, 'data-must-be-validated'='true')
+        +form-control('ОГРН', 'number', 'user-ogrn', '')(disabled, 'data-must-be-validated'='true')
+        +form-control('ОКВЭД', 'number', 'user-okved', '')(disabled, 'data-must-be-validated'='true')
 
-      +form-control('Электронная почта', 'email', 'user-email', 'Введите данные')
+      +form-control('Электронная почта', 'email', 'user-email', 'Введите данные')('data-must-be-validated'='true')
 
       include UIKit/form-password/form-password.pug
-      +form-control('Пароль', 'password', 'user-password', 'Введите пароль')
-      +form-control('Повторите пароль', 'password', 'user-password-repeated', 'Введите пароль')
+      +form-control('Пароль', 'password', 'user-password', 'Введите пароль')('data-must-be-validated'='true')
+      +form-control('Повторите пароль', 'password', 'user-password-repeated', 'Введите пароль')('data-must-be-validated'='true')
 
       include UIKit/form-check/form-check.pug
       +form-check('agreement-data-processing', '', {
         text: 'Ознакомиться с соглашением на обработку персональных данных',
-      })('data-modal-id'='agreement-modal')
+      })('data-modal-id'='agreement-modal' 'data-must-be-validated'='true')
 
       +form-check('agreement-contract', '', {
         text: 'Ознакомиться с договором (ссылка на договор)',
-      })('data-modal-id'='contract-modal')
+      })('data-modal-id'='contract-modal' 'data-must-be-validated'='true')
 
     include UIKit/button/button.pug
     +button('registration-form-submit', 'button', 'primary', 'Регистрация')(disabled)
