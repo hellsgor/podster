@@ -12,7 +12,7 @@ document.querySelectorAll('.form-select').forEach((select) => {
   const realSelectPlaceholder = select.querySelector(
     '.form-select__mobile .form-select__placeholder'
   );
-
+  realSelect.value = '';
   if (isMobileDevice()) {
     select
       .querySelector('.form-select__desktop')
