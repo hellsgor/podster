@@ -80,6 +80,7 @@ document.querySelectorAll('.form-select').forEach((select) => {
           }
           if (option.value === event.target.dataset.optionValue) {
             option.setAttribute('selected', '');
+            realSelect.dispatchEvent(new Event('change'));
             pseudoSelect.textContent = realSelect.querySelector(
               `option[value="${realSelect.value}"]`
             ).text;
