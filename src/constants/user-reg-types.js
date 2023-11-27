@@ -1,5 +1,19 @@
 export const USER_REG_TYPES = {
-  NATURAL_PERSON: 'natural_person',
-  LEGAL_PERSON: 'legal_person',
-  INDIVIDUAL_ENTREPRENEUR: 'individual_entrepreneur',
+  NATURAL_PERSON: {
+    VALUE: 'natural_person',
+  },
+  LEGAL_PERSON: {
+    VALUE: 'legal_person',
+    CONTROLS_LABELS: {
+      'user-name': 'Наименование',
+      'user-ogrn': 'ОГРН',
+    },
+  },
+  INDIVIDUAL_ENTREPRENEUR: {
+    VALUE: 'individual_entrepreneur',
+    CONTROLS_LABELS: {
+      'user-name': 'ФИО ИП',
+      'user-ogrn': 'ОГРНИП',
+    },
+  },
 };

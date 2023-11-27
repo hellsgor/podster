@@ -30,6 +30,10 @@
       color: $blue-3;
     }
 
+    &:read-only {
+      color: $blue-3;
+    }
+
     @include media-576 {
       height: 32px;
       padding: 0 12px;

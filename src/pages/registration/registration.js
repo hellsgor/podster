@@ -6,7 +6,7 @@ import {REGISTRATION_IDS} from 'Constants/names-and-ids';
 import {addListenerForModal} from 'Components/registration/helpers/_addListenerForModal';
 import {momentValidation} from 'Components/registration/helpers/validation/_momentValidation';
 import {getValidatedControls} from 'Components/registration/helpers/_getValidatedControls';
-import {numbersOnly} from 'Components/registration/helpers/masks/numbers-only';
+import {numbersOnly} from 'Utils/masks/numbers-only';
 import {registrationValidation} from 'Components/registration/helpers/validation/_registration-validation';
 
 addListenerForModal(
@@ -35,8 +35,9 @@ getValidatedControls().forEach((control) => {
           REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_OGRN ||
         event.target.name ===
           REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_OKVED
-      )
+      ) {
         numbersOnly(event.target);
+      }
       momentValidation(event, registrationValidation);
     }
   );

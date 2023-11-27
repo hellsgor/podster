@@ -14,6 +14,7 @@ export const REGISTRATION_IDS = {
       'agreement-data-processing-button',
     ADVERTISER_AGREEMENT_CONTRACT: 'agreement-contract',
     ADVERTISER_AGREEMENT_CONTRACT_BUTTON: 'agreement-contract-button',
+    ADVERTISER_BACK_DATA_BLOCK: 'advertiser_back_data_block',
   },
   REGISTRATION_MODALS: {
     CONTRACT: 'contract-modal',

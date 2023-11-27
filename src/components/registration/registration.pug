@@ -25,7 +25,7 @@ section.registration
       +form-control('ИНН', 'text', 'user-inn', 'Введите данные')('data-must-be-validated'='true')
 
       // .visually-hidden
-      .registration__from-back-block.visually-hidden
+      .registration__from-back-block.visually-hidden(id='advertiser_back_data_block')
         +form-control('ФИО', 'text', 'user-name', '')(disabled, 'data-must-be-validated'='true')
         +form-control('ОГРН', 'text', 'user-ogrn', '')(disabled, 'data-must-be-validated'='true')
         +form-control('ОКВЭД', 'text', 'user-okved', '')(disabled, 'data-must-be-validated'='true')
