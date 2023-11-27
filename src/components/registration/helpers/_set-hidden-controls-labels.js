@@ -10,14 +10,16 @@ export function setHiddenControlsLabels(controlValue) {
     basicUserTypeObject = USER_REG_TYPES.INDIVIDUAL_ENTREPRENEUR;
   }
 
-  setLabel(
-    REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_NAME,
-    basicUserTypeObject
-  );
-  setLabel(
-    REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_OGRN,
-    basicUserTypeObject
-  );
+  if (controlValue !== USER_REG_TYPES.NATURAL_PERSON.VALUE) {
+    setLabel(
+      REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_NAME,
+      basicUserTypeObject
+    );
+    setLabel(
+      REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_OGRN,
+      basicUserTypeObject
+    );
+  }
 }
 
 function setLabel(controlID, basicUserTypeObject) {
