@@ -1,5 +1,3 @@
-import {registrationValidation} from './_registration-validation';
-
-export function momentValidation(event) {
-  registrationValidation(event.target);
+export function momentValidation(event, validationFunc) {
+  validationFunc(event.target);
 }

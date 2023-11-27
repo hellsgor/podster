@@ -7,6 +7,7 @@ import {addListenerForModal} from 'Components/registration/helpers/_addListenerF
 import {momentValidation} from 'Components/registration/helpers/validation/_momentValidation';
 import {getValidatedControls} from 'Components/registration/helpers/_getValidatedControls';
 import {numbersOnly} from 'Components/registration/helpers/masks/numbers-only';
+import {registrationValidation} from 'Components/registration/helpers/validation/_registration-validation';
 
 addListenerForModal(
   REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_AGREEMENT_CONTRACT_BUTTON,
@@ -36,7 +37,7 @@ getValidatedControls().forEach((control) => {
           REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_OKVED
       )
         numbersOnly(event.target);
-      momentValidation(event, REGISTRATION_IDS.REGISTRATION_CONTROLS);
+      momentValidation(event, registrationValidation);
     }
   );
 });
