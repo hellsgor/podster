@@ -4,6 +4,7 @@ import {REGISTRATION_IDS} from 'Constants/names-and-ids';
 import {handleFormSubmit} from 'Utils/handle-form-submit/handle-form-submit';
 import {innResponseProcessing} from 'Components/registration/helpers/_inn-response-processing';
 import {setHiddenControlsLabels} from 'Components/registration/helpers/_set-hidden-controls-labels';
+import {USER_REG_TYPES} from 'Constants/user-reg-types';
 
 export function registrationValidation(control) {
   let isInnValid = false;
@@ -15,6 +16,13 @@ export function registrationValidation(control) {
     ).dataset.verificated = false;
     resetBackUserDataControlsValues();
     setHiddenControlsLabels(control.value);
+    if (control.value === USER_REG_TYPES.NATURAL_PERSON.VALUE) {
+      document
+        .getElementById(
+          REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_BACK_DATA_BLOCK
+        )
+        .classList.add('visually-hidden');
+    }
     if (
       control
         .closest('form')
