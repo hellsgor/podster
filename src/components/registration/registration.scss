@@ -41,17 +41,6 @@ body.page-auth__body {
     flex-direction: column;
     row-gap: 16px;
 
-    input[name="user-inn"],
-    input[name="user-ogrn"],
-    input[name="user-okved"] {
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-      }
-
-      -moz-appearance: textfield;
-    }
-
     @include media-576 {
       row-gap: 8px;
     }

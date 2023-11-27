@@ -22,13 +22,13 @@ section.registration
       ], 'Выберите из списка')('data-must-be-validated'='true')
 
       include UIKit/form-control/form-control.pug
-      +form-control('ИНН', 'number', 'user-inn', 'Введите данные')('data-must-be-validated'='true')
+      +form-control('ИНН', 'text', 'user-inn', 'Введите данные')('data-must-be-validated'='true')
 
       // .visually-hidden
       .registration__from-back-block.visually-hidden
         +form-control('ФИО', 'text', 'user-name', '')(disabled, 'data-must-be-validated'='true')
-        +form-control('ОГРН', 'number', 'user-ogrn', '')(disabled, 'data-must-be-validated'='true')
-        +form-control('ОКВЭД', 'number', 'user-okved', '')(disabled, 'data-must-be-validated'='true')
+        +form-control('ОГРН', 'text', 'user-ogrn', '')(disabled, 'data-must-be-validated'='true')
+        +form-control('ОКВЭД', 'text', 'user-okved', '')(disabled, 'data-must-be-validated'='true')
 
       +form-control('Электронная почта', 'email', 'user-email', 'Введите данные')('data-must-be-validated'='true')
 
