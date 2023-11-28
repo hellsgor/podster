@@ -5,6 +5,10 @@ import {handleFormSubmit} from 'Utils/handle-form-submit/handle-form-submit';
 import {innResponseProcessing} from 'Components/registration/helpers/_inn-response-processing';
 import {setHiddenControlsLabels} from 'Components/registration/helpers/_set-hidden-controls-labels';
 import {USER_REG_TYPES} from 'Constants/user-reg-types';
+import {REG_EXPS} from 'Constants/reg-exps';
+import {showControlError} from 'Utils/errors/showControlError';
+import {ERRORS} from 'Constants/errors';
+import {emailResponseProcessing} from 'Components/registration/helpers/_email-response-processing';
 
 export function registrationValidation(control) {
   let isInnValid = false;
@@ -57,6 +61,23 @@ export function registrationValidation(control) {
       );
     } else {
       resetBackUserDataControlsValues();
+    }
+  }
+
+  if (
+    control.name === REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_EMAIL
+  ) {
+    resetControlError(control);
+    if (control.value.length >= 7) {
+      if (!REG_EXPS.EMAIL.test(control.value.toLowerCase().trim())) {
+        showControlError(control, ERRORS.EC001());
+      } else {
+        handleFormSubmit(
+          [control],
+          './moc/email-response-data-success.json',
+          emailResponseProcessing
+        );
+      }
     }
   }
 }

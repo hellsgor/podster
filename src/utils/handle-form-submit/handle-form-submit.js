@@ -8,5 +8,5 @@ export async function handleFormSubmit(
 ) {
   const data = serializeData(controlsArrayOrForm);
   const response = await sendData(data, url);
-  responseHandlerFunction(response);
+  responseHandlerFunction(response, controlsArrayOrForm);
 }
