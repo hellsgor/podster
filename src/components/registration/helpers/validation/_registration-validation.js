@@ -1,6 +1,6 @@
 import {resetControlError} from 'Utils/errors/reset-control-error';
 import {isRegistrationInnValid} from './_is-registration-inn-valid';
-import {REGISTRATION_IDS} from 'Constants/names-and-ids';
+import {COMMON_CONSTANTS, REGISTRATION_IDS} from 'Constants/names-and-ids';
 import {handleFormSubmit} from 'Utils/handle-form-submit/handle-form-submit';
 import {innResponseProcessing} from 'Components/registration/helpers/_inn-response-processing';
 import {setHiddenControlsLabels} from 'Components/registration/helpers/_set-hidden-controls-labels';
@@ -9,6 +9,7 @@ import {REG_EXPS} from 'Constants/reg-exps';
 import {showControlError} from 'Utils/errors/showControlError';
 import {ERRORS} from 'Constants/errors';
 import {emailResponseProcessing} from 'Components/registration/helpers/_email-response-processing';
+import {passwordsMatch} from 'Components/registration/helpers/validation/_passwords-match';
 
 export function registrationValidation(control) {
   let isInnValid = false;
@@ -78,6 +79,28 @@ export function registrationValidation(control) {
           emailResponseProcessing
         );
       }
+    }
+  }
+
+  if (
+    control.name === REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_PASSWORD
+  ) {
+    resetControlError(control);
+    if (control.value.length >= COMMON_CONSTANTS.MIN_PASSWORD_LENGTH) {
+      if (!REG_EXPS.PASSWORD.test(control.value)) {
+        showControlError(control, ERRORS.EC001());
+      }
+      passwordsMatch();
+    }
+  }
+
+  if (
+    control.name ===
+    REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_PASSWORD_REPEATED
+  ) {
+    resetControlError(control);
+    if (control.value.length >= COMMON_CONSTANTS.MIN_PASSWORD_LENGTH) {
+      passwordsMatch();
     }
   }
 }

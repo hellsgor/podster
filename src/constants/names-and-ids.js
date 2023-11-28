@@ -25,3 +25,7 @@ export const REGISTRATION_IDS = {
 export const COMMON_IDS = {
   MODAL_CLOSE_BUTTON: 'modal-close-button',
 };
+
+export const COMMON_CONSTANTS = {
+  MIN_PASSWORD_LENGTH: 8,
+};
