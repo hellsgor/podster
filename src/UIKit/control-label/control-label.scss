@@ -1,4 +1,8 @@
 .control-label {
   margin-bottom: 8px;
   color: $blue-3;
+
+  @include media-576 {
+    font-weight: 400;
+  }
 }

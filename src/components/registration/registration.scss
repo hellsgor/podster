@@ -8,26 +8,31 @@
 @import 'UIKit/form-control-error/form-control-error.scss';
 @import 'UIKit/button/button.scss';
 
+@import 'Components/document-modal/document-modal';
+@import './buttons-modal/buttons-modal.scss';
+
 body.page-auth__body {
-  justify-content: unset;
+  justify-content: flex-start;
 }
 
 .registration {
   display: flex;
   max-width: 435px;
-  padding: 140px 0;
+  padding: 140px 0 32px;
   flex-direction: column;
   align-items: center;
   row-gap: 32px;
 
   &__form {
     display: flex;
-    //overflow-y: scroll;
     width: 100%;
-    //max-height: 800px;
     flex-direction: column;
     align-items: center;
     row-gap: 24px;
+
+    @include media-576 {
+      row-gap: 16px;
+    }
   }
 
   &__controls {
@@ -36,15 +41,8 @@ body.page-auth__body {
     flex-direction: column;
     row-gap: 16px;
 
-    input[name="user-inn"],
-    input[name="user-ogrn"],
-    input[name="user-okved"] {
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-      }
-
-      -moz-appearance: textfield;
+    @include media-576 {
+      row-gap: 8px;
     }
   }
 
@@ -63,7 +61,22 @@ body.page-auth__body {
     p {
       margin: 0;
       color: $blue-3;
+
+      @include media-576 {
+        font-size: 14px;
+      }
     }
-  ;
+  }
+
+  .form-check {
+    @include media-576 {
+      margin-top: 8px;
+    }
+  }
+
+  @include media-576 {
+    max-width: 287px;
+    padding: 94px 0 32px;
+    row-gap: 24px;
   }
 }

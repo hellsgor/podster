@@ -12,7 +12,7 @@ document.querySelectorAll('.form-select').forEach((select) => {
   const realSelectPlaceholder = select.querySelector(
     '.form-select__mobile .form-select__placeholder'
   );
-
+  realSelect.value = '';
   if (isMobileDevice()) {
     select
       .querySelector('.form-select__desktop')
@@ -62,7 +62,6 @@ document.querySelectorAll('.form-select').forEach((select) => {
       select
         .querySelector('button.form-select__select')
         .classList.remove('form-select__select_not-selected');
-
       if (realSelect.multiple === true) {
         realSelect
           .querySelector(
@@ -81,6 +80,7 @@ document.querySelectorAll('.form-select').forEach((select) => {
           }
           if (option.value === event.target.dataset.optionValue) {
             option.setAttribute('selected', '');
+            realSelect.dispatchEvent(new Event('change'));
             pseudoSelect.textContent = realSelect.querySelector(
               `option[value="${realSelect.value}"]`
             ).text;

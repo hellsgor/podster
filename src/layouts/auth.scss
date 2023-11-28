@@ -19,5 +19,15 @@
     position: absolute;
     top: 26px;
     left: 34px;
+
+    @include media-576 {
+      top: 18px;
+      left: 18px;
+
+      img {
+        width: 118px;
+        height: 34px;
+      }
+    }
   }
 }

@@ -3,11 +3,6 @@
 
   h1 {
     margin: 0 0 32px;
-    // Типография на правках, ставлю свои стили
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 39px;
-    text-align: center;
   }
 
   a {
@@ -28,9 +23,9 @@
 
   &__buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 24px;
+    align-items: center;
+    justify-content: space-between;
 
     .btn {
       width: 144px;
@@ -40,6 +35,6 @@
   &__footer {
     text-align: center;
     color: $blue-3;
-    
+
   }
 }

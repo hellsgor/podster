@@ -1,0 +1,17 @@
+.document-modal {
+  overflow-y: scroll;
+  width: 100%;
+  max-width: 691px;
+  max-height: 640px;
+  padding-right: 48px;
+  padding-left: 48px;
+  margin-bottom: 24px;
+
+  .paragraph {
+    color: $blue-3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

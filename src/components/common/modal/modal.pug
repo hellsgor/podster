@@ -1,0 +1,15 @@
+mixin modal(title, isCloseButton=true)
+  .modal&attributes(attributes)
+
+    .modal__backdrop
+      include Components/common/backdrop/backdrop.pug
+      +backdrop
+
+    .modal__body
+      if title
+        h2.modal__title #{title}
+
+      block content
+
+      if isCloseButton
+        .modal__close-button(id='modal-close-button')

@@ -8,42 +8,42 @@ section.registration
       include UIKit/form-select/form-select.pug
       +form-select('Тип рекламодателя', 'user-reg-type', false, [
         {
-          value: '',
+          value: 'natural_person',
           text: 'Самозанятый',
         },
         {
-          value: '',
+          value: 'legal_person',
           text: 'Юридическое лицо',
         },
         {
-          value: '',
+          value: 'individual_entrepreneur',
           text: 'Индивидуальный предприниматель',
         }
-      ], 'Выберите из списка')
+      ], 'Выберите из списка')('data-must-be-validated'='true')
 
       include UIKit/form-control/form-control.pug
-      +form-control('ИНН', 'number', 'user-inn', 'Введите данные')
+      +form-control('ИНН', 'text', 'user-inn', 'Введите данные')('data-must-be-validated'='true')
 
       // .visually-hidden
-      .registration__from-back-block
-        +form-control('ФИО', 'text', 'user-name', '')(disabled)
-        +form-control('ОГРН', 'number', 'user-ogrn', '')(disabled)
-        +form-control('ОКВЭД', 'number', 'user-okved', '')(disabled)
+      .registration__from-back-block.visually-hidden(id='advertiser_back_data_block')
+        +form-control('ФИО', 'text', 'user-name', '')(disabled, 'data-must-be-validated'='true')
+        +form-control('ОГРН', 'text', 'user-ogrn', '')(disabled, 'data-must-be-validated'='true')
+        +form-control('ОКВЭД', 'text', 'user-okved', '')(disabled, 'data-must-be-validated'='true')
 
-      +form-control('Электронная почта', 'email', 'user-email', 'Введите данные')
+      +form-control('Электронная почта', 'email', 'user-email', 'Введите данные')('data-must-be-validated'='true')
 
       include UIKit/form-password/form-password.pug
-      +form-control('Пароль', 'password', 'user-password', 'Введите пароль')
-      +form-control('Повторите пароль', 'password', 'user-password-repeated', 'Введите пароль')
+      +form-control('Пароль', 'password', 'user-password', 'Введите пароль')('data-must-be-validated'='true')
+      +form-control('Повторите пароль', 'password', 'user-password-repeated', 'Введите пароль')('data-must-be-validated'='true')
 
       include UIKit/form-check/form-check.pug
       +form-check('agreement-data-processing', '', {
         text: 'Ознакомиться с соглашением на обработку персональных данных',
-      })
+      })('data-modal-id'='agreement-modal' 'data-must-be-validated'='true')
 
       +form-check('agreement-contract', '', {
         text: 'Ознакомиться с договором (ссылка на договор)',
-      })
+      })('data-modal-id'='contract-modal' 'data-must-be-validated'='true')
 
     include UIKit/button/button.pug
     +button('registration-form-submit', 'button', 'primary', 'Регистрация')(disabled)
@@ -52,6 +52,13 @@ section.registration
     p Есть аккаунт?
     a(href='./auth.html')
       +button('auth-button', 'button', 'link', 'Авторизация')
+
+  include ./_agreement.pug
+  +modal('Соглашение', true)(class='registration__modal modal_hidden modal_fade', id='agreement-modal')
+
+  include ./_contract.pug
+  +modal('Договор', true)(class='registration__modal modal_hidden modal_fade', id='contract-modal')
+
 
 
 

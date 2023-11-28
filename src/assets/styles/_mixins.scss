@@ -21,3 +21,22 @@
     @content;
   }
 }
+
+@mixin hidden {
+  z-index: -10000;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+}
+
+@mixin visible {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  @content;
+}
+
+@mixin fade {
+  opacity: 0;
+  transition: opacity $basic-transition-timing ease-in-out;
+}
