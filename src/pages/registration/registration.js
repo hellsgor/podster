@@ -63,6 +63,7 @@ registrationSubmitButton.addEventListener('click', (event) => {
   handleFormSubmit(
     validatedControls,
     './moc/registration-response-success.json',
+    // './moc/registration-response-error.json',
     registrationResponseProcessing
   );
 });

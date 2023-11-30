@@ -1,10 +1,10 @@
 import {isSuccess} from 'Utils/handle-form-submit/_isSuccess';
+import {errorsProcessingFromResponse} from 'Utils/errors/_errors-processing-from-response';
 
-export function registrationResponseProcessing(response) {
-  console.log('reg ok');
-  console.log(response);
-
-  if (isSuccess(response)) {
+export function registrationResponseProcessing(response, controlsArrayOrForm) {
+  if (!isSuccess(response)) {
+    errorsProcessingFromResponse(response, controlsArrayOrForm);
+  } else {
     window.location.href = './registrationThanks.html';
   }
 }

@@ -1,0 +1,13 @@
+{
+  "status": "error",
+  "error-info": [
+    {
+      "control-name": "user-email",
+      "error-text": "Текст ошибки для user-email"
+    },
+    {
+      "control-name": "user-inn",
+      "error-text": "Текст ошибки для user-inn"
+    }
+  ]
+}
