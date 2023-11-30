@@ -9,6 +9,8 @@ import {getValidatedControls} from 'Components/registration/helpers/_getValidate
 import {numbersOnly} from 'Utils/masks/numbers-only';
 import {registrationValidation} from 'Components/registration/helpers/validation/_registration-validation';
 import {validatedControlsCheck} from 'Components/registration/helpers/_validated-controls-check';
+import {handleFormSubmit} from 'Utils/handle-form-submit/handle-form-submit';
+import {registrationResponseProcessing} from 'Components/registration/helpers/_registration-response-processing';
 
 const validatedControls = getValidatedControls();
 const registrationSubmitButton = document.getElementById(
@@ -53,5 +55,14 @@ validatedControls.forEach((control) => {
         registrationSubmitButton.setAttribute('disabled', '');
       }
     }
+  );
+});
+
+registrationSubmitButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  handleFormSubmit(
+    validatedControls,
+    './moc/registration-response-success.json',
+    registrationResponseProcessing
   );
 });

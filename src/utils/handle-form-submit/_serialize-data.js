@@ -5,6 +5,9 @@ export function serializeData(controlsArrayOrForm) {
     controlsArrayOrForm.forEach((control) => {
       data.append(control.name, control.value);
     });
+    // for (let [key, value] of data) {
+    //   console.log(`${key} - ${value}`);
+    // }
   }
 
   if (
