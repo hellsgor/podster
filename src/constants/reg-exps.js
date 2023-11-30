@@ -4,5 +4,5 @@ export const REG_EXPS = {
     other: /^[0-9]{12}$/,
   },
   EMAIL: /[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+/i,
-  PASSWORD: /^(?=.*\d)\w{8,30}$/m,
+  PASSWORD: /^(?=.*[0-9])(?=.*[A-Z])\w{8,30}$/m,
 };
