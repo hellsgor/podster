@@ -8,6 +8,7 @@ import {momentValidation} from 'Components/registration/helpers/validation/_mome
 import {getValidatedControls} from 'Components/registration/helpers/_getValidatedControls';
 import {numbersOnly} from 'Utils/masks/numbers-only';
 import {registrationValidation} from 'Components/registration/helpers/validation/_registration-validation';
+import {validatedControlsCheck} from 'Components/registration/helpers/_validated-controls-check';
 
 const validatedControls = getValidatedControls();
 const registrationSubmitButton = document.getElementById(
@@ -54,15 +55,3 @@ validatedControls.forEach((control) => {
     }
   );
 });
-
-function validatedControlsCheck(validatedControls) {
-  let isVerificationFlag = true;
-  Array.from(validatedControls)
-    .filter((control) => control.tagName !== 'SELECT')
-    .forEach((control) => {
-      if (!control.dataset.verificated) {
-        isVerificationFlag = false;
-      }
-    });
-  return isVerificationFlag;
-}
