@@ -9,6 +9,13 @@ import {getValidatedControls} from 'Components/registration/helpers/_getValidate
 import {numbersOnly} from 'Utils/masks/numbers-only';
 import {registrationValidation} from 'Components/registration/helpers/validation/_registration-validation';
 
+const validatedControls = getValidatedControls();
+const registrationSubmitButton = document.getElementById(
+  REGISTRATION_IDS.REGISTRATION_FORM_SUBMIT_BUTTON
+);
+let isSubmitButtonEnableFlag = true;
+let isControlsFocused = false;
+
 addListenerForModal(
   REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_AGREEMENT_CONTRACT_BUTTON,
   REGISTRATION_IDS.REGISTRATION_MODALS.CONTRACT
@@ -20,7 +27,9 @@ addListenerForModal(
   REGISTRATION_IDS.REGISTRATION_MODALS.AGREEMENT
 );
 
-getValidatedControls().forEach((control) => {
+console.log(validatedControls);
+
+validatedControls.forEach((control) => {
   control.addEventListener(
     control.tagName === 'INPUT'
       ? control.type !== 'checkbox'
@@ -28,6 +37,7 @@ getValidatedControls().forEach((control) => {
         : 'change'
       : 'change',
     (event) => {
+      isControlsFocused = true;
       if (
         event.target.name ===
           REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_INN ||
@@ -39,6 +49,23 @@ getValidatedControls().forEach((control) => {
         numbersOnly(event.target);
       }
       momentValidation(event, registrationValidation);
+      if (validatedControlsCheck(validatedControls)) {
+        registrationSubmitButton.removeAttribute('disabled');
+      } else {
+        registrationSubmitButton.setAttribute('disabled', '');
+      }
     }
   );
 });
+
+function validatedControlsCheck(validatedControls) {
+  let isVerificationFlag = true;
+  Array.from(validatedControls)
+    .filter((control) => control.tagName !== 'SELECT')
+    .forEach((control) => {
+      if (!control.dataset.verificated) {
+        isVerificationFlag = false;
+      }
+    });
+  return isVerificationFlag;
+}

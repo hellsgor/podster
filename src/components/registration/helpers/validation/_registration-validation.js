@@ -88,7 +88,10 @@ export function registrationValidation(control) {
     resetControlError(control);
     if (control.value.length >= COMMON_CONSTANTS.MIN_PASSWORD_LENGTH) {
       if (!REG_EXPS.PASSWORD.test(control.value)) {
+        control.dataset.verificated = false;
         showControlError(control, ERRORS.EC001());
+      } else {
+        control.dataset.verificated = true;
       }
       passwordsMatch();
     }
