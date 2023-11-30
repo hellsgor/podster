@@ -6,3 +6,10 @@ block scripts
   script(src=require('./registration.js') defer)
 block content
   include Components/registration/registration.pug
+
+block modals
+  include Components/registration/_agreement.pug
+  +modal('Соглашение', true)(class='registration__modal modal_hidden modal_fade', id='agreement-modal')
+
+  include Components/registration/_contract.pug
+  +modal('Договор', true)(class='registration__modal modal_hidden modal_fade', id='contract-modal')

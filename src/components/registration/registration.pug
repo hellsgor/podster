@@ -53,12 +53,6 @@ section.registration
     a(href='./auth.html')
       +button('auth-button', 'button', 'link', 'Авторизация')
 
-  include ./_agreement.pug
-  +modal('Соглашение', true)(class='registration__modal modal_hidden modal_fade', id='agreement-modal')
-
-  include ./_contract.pug
-  +modal('Договор', true)(class='registration__modal modal_hidden modal_fade', id='contract-modal')
-
 
 
 
