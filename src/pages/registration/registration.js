@@ -13,8 +13,7 @@ const validatedControls = getValidatedControls();
 const registrationSubmitButton = document.getElementById(
   REGISTRATION_IDS.REGISTRATION_FORM_SUBMIT_BUTTON
 );
-let isSubmitButtonEnableFlag = true;
-let isControlsFocused = false;
+let isControlsTouched = false;
 
 addListenerForModal(
   REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_AGREEMENT_CONTRACT_BUTTON,
@@ -27,8 +26,6 @@ addListenerForModal(
   REGISTRATION_IDS.REGISTRATION_MODALS.AGREEMENT
 );
 
-console.log(validatedControls);
-
 validatedControls.forEach((control) => {
   control.addEventListener(
     control.tagName === 'INPUT'
@@ -37,7 +34,7 @@ validatedControls.forEach((control) => {
         : 'change'
       : 'change',
     (event) => {
-      isControlsFocused = true;
+      isControlsTouched = true;
       if (
         event.target.name ===
           REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_INN ||
@@ -49,7 +46,7 @@ validatedControls.forEach((control) => {
         numbersOnly(event.target);
       }
       momentValidation(event, registrationValidation);
-      if (validatedControlsCheck(validatedControls)) {
+      if (validatedControlsCheck(validatedControls) && isControlsTouched) {
         registrationSubmitButton.removeAttribute('disabled');
       } else {
         registrationSubmitButton.setAttribute('disabled', '');
