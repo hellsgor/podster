@@ -11,10 +11,11 @@ module.exports = {
   entry: {
     auth: './src/pages/auth/auth.pug',
     registration: './src/pages/registration/registration.pug',
+    registrationThanks:
+      './src/pages/registration-thanks/registration-thanks.pug',
     uiKit: './src/pages/ui-kit/ui-kit.pug',
     typography: './src/pages/typography/typography.pug',
-    authorProfile: './src/pages/author/profile/profile.pug',
-    advertiserProfile: './src/pages/advertiser/profile/profile.pug'
+    // authorProfile: './src/pages/author/profile/profile.pug',
   },
   output: {
     filename: 'assets/js/[name].js',
