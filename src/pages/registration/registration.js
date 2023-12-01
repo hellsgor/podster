@@ -3,7 +3,6 @@ import 'Constants/index.js';
 import 'Components/registration/buttons-modal/buttons-modal.js';
 import 'Components/common/modal/modal.js';
 import {REGISTRATION_IDS} from 'Constants/names-and-ids';
-import {momentValidation} from 'Components/registration/helpers/validation/_momentValidation';
 import {numbersOnly} from 'Utils/masks/numbers-only';
 import {registrationValidation} from 'Components/registration/helpers/validation/_registration-validation';
 import {handleFormSubmit} from 'Utils/handle-form-submit/handle-form-submit';
@@ -12,13 +11,11 @@ import {getControlEventName} from 'Utils/get-control-event-name';
 import {getControls} from 'Components/registration/helpers/_get-controls';
 import {makeRegistrationButtonDisabled} from 'Components/registration/helpers/_make-registration-button-disabled';
 import {addModalsListeners} from 'Components/common/modal/_add-modals-listeners';
-import {debounce} from 'Utils/debounce';
 
 const controls = getControls();
 const registrationSubmitButton = document.getElementById(
   REGISTRATION_IDS.REGISTRATION_FORM_SUBMIT_BUTTON
 );
-const debouncedMomentValidation = debounce(momentValidation, 3000);
 
 addModalsListeners([
   {
@@ -42,16 +39,7 @@ controls.validatedControls.forEach((control) => {
       REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_OKVED,
     ]);
 
-    if (
-      ![
-        REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_INN,
-        REGISTRATION_IDS.REGISTRATION_CONTROLS.ADVERTISER_EMAIL,
-      ].includes(control.name)
-    ) {
-      momentValidation(event, registrationValidation);
-    } else {
-      debouncedMomentValidation(event, registrationValidation);
-    }
+    registrationValidation(event.target);
 
     makeRegistrationButtonDisabled(
       controls.validatedControls,

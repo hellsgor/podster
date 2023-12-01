@@ -12,6 +12,7 @@ export function emailResponseProcessing(response, controlsArrayOrForm) {
     );
     if (emailControl) {
       emailControl.dataset.verificated = true;
+      emailControl.removeAttribute('readonly');
     }
   }
 }
