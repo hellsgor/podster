@@ -9,6 +9,7 @@ const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
   mode: 'development',
   entry: {
+    index: './src/pages/main/main.pug',
     registration: './src/pages/registration/registration.pug',
     registrationThanks:
       './src/pages/registration-thanks/registration-thanks.pug',
