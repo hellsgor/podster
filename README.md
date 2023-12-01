@@ -2,6 +2,8 @@
 
 Last project in Axbit Group
 
+Посмотреть проект - https://hellsgor.github.io/podster/
+
 ---
 
 1. [Клонирование репозитория](#a-namerepo-clone-клонирование-репозитория-a)
