@@ -1,3 +1,3 @@
 export function getValidatedControls() {
-  return document.querySelectorAll('[data-must-be-validated=true]');
+  return Array.from(document.querySelectorAll('[data-must-be-validated=true]'));
 }

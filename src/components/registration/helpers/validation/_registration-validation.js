@@ -10,6 +10,9 @@ import {showControlError} from 'Utils/errors/showControlError';
 import {ERRORS} from 'Constants/errors';
 import {emailResponseProcessing} from 'Components/registration/helpers/_email-response-processing';
 import {passwordsMatch} from 'Components/registration/helpers/validation/_passwords-match';
+import {debounce} from 'Utils/debounce';
+
+const debouncedHandleFormSubmit = debounce(handleFormSubmit);
 
 export function registrationValidation(control) {
   let isInnValid = false;
@@ -55,7 +58,7 @@ export function registrationValidation(control) {
     );
     if (isInnValid) {
       control.setAttribute('readonly', '');
-      handleFormSubmit(
+      handleFormSubmitDebounced(
         [control],
         './moc/inn-response-data-success.json',
         innResponseProcessing
@@ -73,7 +76,7 @@ export function registrationValidation(control) {
       if (!REG_EXPS.EMAIL.test(control.value.toLowerCase().trim())) {
         showControlError(control, ERRORS.EC001());
       } else {
-        handleFormSubmit(
+        handleFormSubmitDebounced(
           [control],
           './moc/email-response-data-success.json',
           emailResponseProcessing
@@ -88,7 +91,10 @@ export function registrationValidation(control) {
     resetControlError(control);
     if (control.value.length >= COMMON_CONSTANTS.MIN_PASSWORD_LENGTH) {
       if (!REG_EXPS.PASSWORD.test(control.value)) {
+        control.dataset.verificated = false;
         showControlError(control, ERRORS.EC001());
+      } else {
+        control.dataset.verificated = true;
       }
       passwordsMatch();
     }
@@ -114,4 +120,8 @@ function resetBackUserDataControlsValues() {
     .forEach((control) => {
       control.value = '';
     });
+}
+
+function handleFormSubmitDebounced(controls, successURL, processingFunction) {
+  debouncedHandleFormSubmit(controls, successURL, processingFunction);
 }

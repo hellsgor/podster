@@ -5,5 +5,6 @@ export function closeModal(eventOrElementID) {
   modal.classList.add('modal_fade');
   window.setTimeout(() => {
     modal.classList.add('modal_hidden');
+    document.querySelector('body').style.overflow = 'auto';
   }, 300);
 }

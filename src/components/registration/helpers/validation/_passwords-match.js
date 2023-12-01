@@ -23,9 +23,13 @@ export function passwordsMatch(
     passwordRepeatedControl.value.length >= COMMON_CONSTANTS.MIN_PASSWORD_LENGTH
   ) {
     if (passwordRepeatedControl.value !== passwordControl.value) {
+      passwordRepeatedControl.dataset.verificated = false;
       showControlError(passwordRepeatedControl, ERRORS.EC003());
-    } else {
-      return true;
+    } else if (
+      passwordControl.dataset.verificated === 'true' &&
+      passwordRepeatedControl.value === passwordControl.value
+    ) {
+      passwordRepeatedControl.dataset.verificated = true;
     }
   }
 }

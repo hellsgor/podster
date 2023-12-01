@@ -1,4 +1,5 @@
 export async function sendData(data, url) {
+  console.log('sendData');
   try {
     const response = await fetch(url, {
       headers: {

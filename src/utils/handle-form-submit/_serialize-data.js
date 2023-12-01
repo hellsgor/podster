@@ -3,8 +3,12 @@ export function serializeData(controlsArrayOrForm) {
   if (Array.isArray(controlsArrayOrForm)) {
     data = new FormData();
     controlsArrayOrForm.forEach((control) => {
+      control.setAttribute('readonly', '');
       data.append(control.name, control.value);
     });
+    // for (let [key, value] of data) {
+    //   console.log(`serializeData: ${key} - ${value}`);
+    // }
   }
 
   if (

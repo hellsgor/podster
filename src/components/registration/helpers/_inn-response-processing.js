@@ -37,5 +37,7 @@ export function innResponseProcessing(response) {
 }
 
 function addControlValue(controlID, response) {
-  document.getElementById(controlID).value = response[controlID];
+  const control = document.getElementById(controlID);
+  control.value = response[controlID];
+  control.dataset.verificated = true;
 }

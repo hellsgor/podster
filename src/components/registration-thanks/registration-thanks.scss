@@ -1,0 +1,13 @@
+@import 'UIKit/button/button.scss';
+
+main.page-auth__main {
+  height: 100%;
+}
+
+.registration-thanks {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
