@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "error-info": [
+    {
+      "control-name": "user-email",
+      "error-text": "Такой email уже используется"
+    }
+  ]
+}

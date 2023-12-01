@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="page-uikit" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/favicon/favicon.ico" type="image/ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/uikit.css">
+    <title>UI-kit</title>
+    <script src="assets/js/ui-kit.js" defer></script>
+  </head>
+  <body class="page-uikit__body">
+    <main class="page-uikit__main"><img src="assets/images/logo.svg" alt="Podster.fm">
+      <h1>UIKit</h1>
+      <h2>Forms</h2>
+      <h3>Form control</h3>
+      <div class="form-control"><label class="control-label font-base_xl form-control__label"
+          for="advertiser-inn">ИНН</label><input class="form-control__input" type="text" name="advertiser-inn"
+          id="advertiser-inn" placeholder="Введите данные"><span class="error form-control__error"></span></div>
+      <h3>Поле для ввода пароля</h3>
+      <div class="form-control"><label class="control-label font-base_xl form-control__label"
+          for="advertiser-password">Пароль</label>
+        <div class="form-control__wrapper"><input class="form-control__input" type="password" name="advertiser-password"
+            id="advertiser-password" placeholder="Введите пароль" data-ui-kit-id="password">
+          <div class="form-control__password-toggle"></div>
+        </div><span class="error form-control__error"></span>
+      </div>
+      <h3>Form select</h3>
+      <div class="ui-kit__component-container ui-kit__component-container_gorizontal">
+        <div class="form-select"><label class="control-label font-base_xl form-select__label"
+            for="example-form-select-1">Example Select 1</label>
+          <div class="form-select__mobile"><select class="form-select__select form-select__select_not-selected"
+              name="example-form-select-1" id="example-form-select-1">
+              <optgroup label="Заголовок 1">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </optgroup>
+              <optgroup label="Заголовок 2">
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+              </optgroup>
+            </select>
+            <div class="form-select__subsidiary"><span
+                class="form-select__placeholder form-select__select_not-selected">Default Option</span>
+              <div class="form-select__arrow" data-mobile-arrow="true"><svg width="18" height="19" viewBox="0 0 18 19"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_59_1015)">
+                    <path d="M14.625 7.25L9 12.875L3.375 7.25" stroke="#474481" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_59_1015">
+                      <rect width="18" height="18" fill="white" transform="translate(18 0.5) rotate(90)"></rect>
+                    </clippath>
+                  </defs>
+                </svg></div>
+            </div>
+          </div>
+          <div class="form-select__desktop"><button class="form-select__select form-select__select_not-selected"
+              id="pseudo-example-form-select-1">Default Option</button>
+            <div class="form-select__arrow"><svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_59_1015)">
+                  <path d="M14.625 7.25L9 12.875L3.375 7.25" stroke="#474481" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clippath id="clip0_59_1015">
+                    <rect width="18" height="18" fill="white" transform="translate(18 0.5) rotate(90)"></rect>
+                  </clippath>
+                </defs>
+              </svg></div>
+            <div class="dropdown visually-hidden form-select__dropdown">
+              <div class="dropdown__options-group">
+                <p class="dropdown__options-heading font-base_xl">Заголовок 1</p>
+                <!-- linkOrButton={text: '', href: ''}-->
+                <div class="form-check"><input class="form-check__box" type="checkbox"
+                    id="example-form-select-1-opt-0-0" name="example-form-select-1-opt-0-0" data-option-value="1"><label
+                    class="form-check__wrapper" for="example-form-select-1-opt-0-0">
+                    <div class="form-check__label"><span>Option 1</span></div>
+                    <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                  </label></div><!-- linkOrButton={text: '', href: ''}-->
+                <div class="form-check"><input class="form-check__box" type="checkbox"
+                    id="example-form-select-1-opt-0-1" name="example-form-select-1-opt-0-1" data-option-value="2"><label
+                    class="form-check__wrapper" for="example-form-select-1-opt-0-1">
+                    <div class="form-check__label"><span>Option 2</span></div>
+                    <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                  </label></div><!-- linkOrButton={text: '', href: ''}-->
+                <div class="form-check"><input class="form-check__box" type="checkbox"
+                    id="example-form-select-1-opt-0-2" name="example-form-select-1-opt-0-2" data-option-value="3"><label
+                    class="form-check__wrapper" for="example-form-select-1-opt-0-2">
+                    <div class="form-check__label"><span>Option 3</span></div>
+                    <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                  </label></div>
+              </div>
+              <div class="dropdown__options-group">
+                <p class="dropdown__options-heading font-base_xl">Заголовок 2</p>
+                <!-- linkOrButton={text: '', href: ''}-->
+                <div class="form-check"><input class="form-check__box" type="checkbox"
+                    id="example-form-select-1-opt-1-0" name="example-form-select-1-opt-1-0" data-option-value="4"><label
+                    class="form-check__wrapper" for="example-form-select-1-opt-1-0">
+                    <div class="form-check__label"><span>Option 4</span></div>
+                    <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                  </label></div><!-- linkOrButton={text: '', href: ''}-->
+                <div class="form-check"><input class="form-check__box" type="checkbox"
+                    id="example-form-select-1-opt-1-1" name="example-form-select-1-opt-1-1" data-option-value="5"><label
+                    class="form-check__wrapper" for="example-form-select-1-opt-1-1">
+                    <div class="form-check__label"><span>Option 5</span></div>
+                    <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                  </label></div><!-- linkOrButton={text: '', href: ''}-->
+                <div class="form-check"><input class="form-check__box" type="checkbox"
+                    id="example-form-select-1-opt-1-2" name="example-form-select-1-opt-1-2" data-option-value="6"><label
+                    class="form-check__wrapper" for="example-form-select-1-opt-1-2">
+                    <div class="form-check__label"><span>Option 6</span></div>
+                    <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                  </label></div>
+              </div>
+            </div>
+          </div><span class="error form-select__error"></span>
+        </div>
+        <div class="form-select"><label class="control-label font-base_xl form-select__label"
+            for="example-form-select-2">Example Select 2</label>
+          <div class="form-select__mobile"><select class="form-select__select form-select__select_not-selected"
+              name="example-form-select-2" id="example-form-select-2">
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <div class="form-select__subsidiary"><span
+                class="form-select__placeholder form-select__select_not-selected">Default Option</span>
+              <div class="form-select__arrow" data-mobile-arrow="true"><svg width="18" height="19" viewBox="0 0 18 19"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_59_1015)">
+                    <path d="M14.625 7.25L9 12.875L3.375 7.25" stroke="#474481" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_59_1015">
+                      <rect width="18" height="18" fill="white" transform="translate(18 0.5) rotate(90)"></rect>
+                    </clippath>
+                  </defs>
+                </svg></div>
+            </div>
+          </div>
+          <div class="form-select__desktop"><button class="form-select__select form-select__select_not-selected"
+              id="pseudo-example-form-select-2">Default Option</button>
+            <div class="form-select__arrow"><svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_59_1015)">
+                  <path d="M14.625 7.25L9 12.875L3.375 7.25" stroke="#474481" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clippath id="clip0_59_1015">
+                    <rect width="18" height="18" fill="white" transform="translate(18 0.5) rotate(90)"></rect>
+                  </clippath>
+                </defs>
+              </svg></div>
+            <div class="dropdown visually-hidden form-select__dropdown">
+              <!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox" id="example-form-select-2-opt-0"
+                  name="example-form-select-2-opt-0" data-option-value="1"><label class="form-check__wrapper"
+                  for="example-form-select-2-opt-0">
+                  <div class="form-check__label"><span>Option 1</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div><!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox" id="example-form-select-2-opt-1"
+                  name="example-form-select-2-opt-1" data-option-value="2"><label class="form-check__wrapper"
+                  for="example-form-select-2-opt-1">
+                  <div class="form-check__label"><span>Option 2</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div><!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox" id="example-form-select-2-opt-2"
+                  name="example-form-select-2-opt-2" data-option-value="3"><label class="form-check__wrapper"
+                  for="example-form-select-2-opt-2">
+                  <div class="form-check__label"><span>Option 3</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div>
+            </div>
+          </div><span class="error form-select__error"></span>
+        </div>
+        <div class="form-select"><label class="control-label font-base_xl form-select__label"
+            for="example-multiple-form-select-1">Example Multiple Select 1</label>
+          <div class="form-select__mobile"><select class="form-select__select form-select__select_not-selected"
+              name="example-multiple-form-select-1" id="example-multiple-form-select-1" multiple>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>
+            </select></div>
+          <div class="form-select__desktop"><button class="form-select__select form-select__select_not-selected"
+              id="pseudo-example-multiple-form-select-1">Default Option</button>
+            <div class="form-select__arrow"><svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_59_1015)">
+                  <path d="M14.625 7.25L9 12.875L3.375 7.25" stroke="#474481" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clippath id="clip0_59_1015">
+                    <rect width="18" height="18" fill="white" transform="translate(18 0.5) rotate(90)"></rect>
+                  </clippath>
+                </defs>
+              </svg></div>
+            <div class="dropdown visually-hidden form-select__dropdown">
+              <!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox"
+                  id="example-multiple-form-select-1-opt-0" name="example-multiple-form-select-1-opt-0"
+                  data-option-value="1"><label class="form-check__wrapper" for="example-multiple-form-select-1-opt-0">
+                  <div class="form-check__label"><span>Option 1</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div><!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox"
+                  id="example-multiple-form-select-1-opt-1" name="example-multiple-form-select-1-opt-1"
+                  data-option-value="2"><label class="form-check__wrapper" for="example-multiple-form-select-1-opt-1">
+                  <div class="form-check__label"><span>Option 2</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div><!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox"
+                  id="example-multiple-form-select-1-opt-2" name="example-multiple-form-select-1-opt-2"
+                  data-option-value="3"><label class="form-check__wrapper" for="example-multiple-form-select-1-opt-2">
+                  <div class="form-check__label"><span>Option 3</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div><!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox"
+                  id="example-multiple-form-select-1-opt-3" name="example-multiple-form-select-1-opt-3"
+                  data-option-value="4"><label class="form-check__wrapper" for="example-multiple-form-select-1-opt-3">
+                  <div class="form-check__label"><span>Option 4</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div><!-- linkOrButton={text: '', href: ''}-->
+              <div class="form-check"><input class="form-check__box" type="checkbox"
+                  id="example-multiple-form-select-1-opt-4" name="example-multiple-form-select-1-opt-4"
+                  data-option-value="5"><label class="form-check__wrapper" for="example-multiple-form-select-1-opt-4">
+                  <div class="form-check__label"><span>Option 5</span></div>
+                  <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+                </label></div>
+            </div>
+          </div><span class="error form-select__error"></span>
+        </div>
+      </div>
+      <h3>Form check</h3>
+      <div class="ui-kit__component-container ui-kit__component-container_vertical">
+        <div class="ui-kit__component-container ui-kit__component-container_gorizontal">
+          <!-- linkOrButton={text: '', href: ''}-->
+          <div class="form-check"><input class="form-check__box" type="checkbox" id="test-checkbox-1"
+              name="test-checkbox-1"><label class="form-check__wrapper" for="test-checkbox-1">
+              <div class="form-check__label"><span>Просто checkbox</span></div>
+            </label></div><!-- linkOrButton={text: '', href: ''}-->
+          <div class="form-check"><input class="form-check__box" type="checkbox" id="test-checkbox-2"
+              name="test-checkbox-2"><label class="form-check__wrapper" for="test-checkbox-2">
+              <div class="form-check__label"><span>Checkbox и</span><a class="form-check__link"
+                  href="https://google.com"><button class="button button_link form-check__button" type="button"
+                    id="test-checkbox-2-button">ссылка в нём</button></a></div>
+            </label></div><!-- linkOrButton={text: '', href: ''}-->
+          <div class="form-check"><input class="form-check__box" type="checkbox" id="test-checkbox-3"
+              name="test-checkbox-3"><label class="form-check__wrapper" for="test-checkbox-3">
+              <div class="form-check__label"><span>Checkbox и</span><button
+                  class="button button_link form-check__button" type="button"
+                  id="test-checkbox-3-button">кнопка</button></div>
+            </label></div><!-- linkOrButton={text: '', href: ''}-->
+          <div class="form-check"><input class="form-check__box" type="checkbox" id="test-checkbox-4"
+              name="test-checkbox-4"><label class="form-check__wrapper" for="test-checkbox-4">
+              <div class="form-check__label"><button class="button button_link form-check__button" type="button"
+                  id="test-checkbox-4-button">Только кнопка</button></div>
+            </label></div>
+        </div>
+        <div class="ui-kit__component-container ui-kit__component-container_gorizontal">
+          <!-- linkOrButton={text: '', href: ''}-->
+          <div class="form-check"><input class="form-check__box" type="checkbox" id="test-checkbox-5"
+              name="test-checkbox-5"><label class="form-check__wrapper" for="test-checkbox-5">
+              <div class="form-check__label"><a class="form-check__link" href="https://google.com"><button
+                    class="button button_link form-check__button" type="button" id="test-checkbox-5-button">Только
+                    ссылка</button></a></div>
+            </label></div><!-- linkOrButton={text: '', href: ''}-->
+          <div class="form-check"><input class="form-check__box" type="checkbox" id="test-checkbox-6"
+              name="test-checkbox-6"><label class="form-check__wrapper" for="test-checkbox-6">
+              <div class="form-check__label"><span>Checkbox с описанием</span></div>
+              <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+            </label></div><!-- linkOrButton={text: '', href: ''}-->
+          <div class="form-check"><input class="form-check__box" type="checkbox" id="test-checkbox-7"
+              name="test-checkbox-7"><label class="form-check__wrapper" for="test-checkbox-7">
+              <div class="form-check__label"><span>Checkbox c описанием и</span><button
+                  class="button button_link form-check__button" type="button"
+                  id="test-checkbox-7-button">кнопкой</button></div>
+              <p class="form-check__description font-base_s">Lorem ipsum dolor sit amet.</p>
+            </label></div>
+        </div>
+      </div>
+      <p>&#10071; Выравнивание элементов внутри .form-check__label, и текста в них, следует реализовывать в стилях того,
+        куда вы вставили компонент, обращаясь к button или span через селектор вида ".form-check__label button" или
+        ".form-check__label span"</p>
+      <h3>Form switch</h3>
+      <div class="ui-kit__component-container ui-kit__component-container_gorizontal">
+        <div class="form-switch"><input class="form-switch__input" type="checkbox" name="test-switch-1"
+            id="test-switch-1"><label class="form-switch__label" for="test-switch-1"></label><span
+            class="form-switch__text form-switch__text_right">Право</span>
+          <p class="form-switch__text form-switch__text_left">Лево</p>
+        </div>
+        <div class="form-switch"><input class="form-switch__input" type="checkbox" name="test-switch-2"
+            id="test-switch-2"><label class="form-switch__label" for="test-switch-2"></label><span
+            class="form-switch__text form-switch__text_right">Право</span></div>
+      </div>
+      <h3>Buttons</h3>
+      <div class="ui-kit__component-container ui-kit__component-container_gorizontal"><button
+          class="button button_primary" type="button" id="test-button-primary">Primary</button><button
+          class="button button_secondary" type="button" id="test-button-secondary">Secondary</button><button
+          class="button button_primary" type="button" id="test-button-primary-disabled" disabled>Disabled
+          Primary</button><button class="button button_secondary" type="button" id="test-button-secondary-disabled"
+          disabled>Disabled Secondary</button><button class="button button_transparent" type="button"
+          id="test-button-transparent">Transparent Button</button><button class="button button_transparent"
+          type="button" id="test-button-transparent-disabled" disabled>Disabled Transparent Button</button><button
+          class="button button_link" type="button" id="test-button-link">Looks like a link</button></div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="page-auth" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/favicon/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <title>Регистрация</title>
+    <script src="assets/js/454.js" defer>
+    </script><script src="assets/js/registration.1.js" defer>
+    </script>
+  </head>
+  <body class="page-auth__body"><a class="page-auth__logo" href=""><img src="assets/images/logo.svg"
+        alt="Podster.fm"></a>
+    <main class="page-auth__main">
+      <section class="registration">
+        <h1 class="registration__title heading-1">Регистрация</h1>
+        <form class="registration__form" name="registration-form" id="registration-form">
+          <h3 class="registration__sub-title heading-3 heading-3_medium">Введите данные для регистрации</h3>
+          <div class="registration__controls">
+            <div class="form-select"><label class="control-label font-base_xl form-select__label"
+                for="user-reg-type">Тип рекламодателя</label>
+              <div class="form-select__mobile"><select class="form-select__select form-select__select_not-selected"
+                  name="user-reg-type" id="user-reg-type" data-must-be-validated="true">
+                  <option value="natural_person">Самозанятый</option>
+                  <option value="legal_person">Юридическое лицо</option>
+                  <option value="individual_entrepreneur">Индивидуальный предприниматель</option>
+                </select>
+                <div class="form-select__subsidiary"><span
+                    class="form-select__placeholder form-select__select_not-selected">Выберите из списка</span>
+                  <div class="form-select__arrow" data-mobile-arrow="true"><svg width="18" height="19"
+                      viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_59_1015)">
+                        <path d="M14.625 7.25L9 12.875L3.375 7.25" stroke="#474481" stroke-linecap="round"
+                          stroke-linejoin="round"></path>
+                      </g>
+                      <defs>
+                        <clippath id="clip0_59_1015">
+                          <rect width="18" height="18" fill="white" transform="translate(18 0.5) rotate(90)"></rect>
+                        </clippath>
+                      </defs>
+                    </svg></div>
+                </div>
+              </div>
+              <div class="form-select__desktop"><button class="form-select__select form-select__select_not-selected"
+                  id="pseudo-user-reg-type">Выберите из списка</button>
+                <div class="form-select__arrow"><svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_59_1015)">
+                      <path d="M14.625 7.25L9 12.875L3.375 7.25" stroke="#474481" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </g>
+                    <defs>
+                      <clippath id="clip0_59_1015">
+                        <rect width="18" height="18" fill="white" transform="translate(18 0.5) rotate(90)"></rect>
+                      </clippath>
+                    </defs>
+                  </svg></div>
+                <div class="dropdown visually-hidden form-select__dropdown">
+                  <!-- linkOrButton={text: '', href: ''}-->
+                  <div class="form-check"><input class="form-check__box" type="checkbox" id="user-reg-type-opt-0"
+                      name="user-reg-type-opt-0" data-option-value="natural_person"><label class="form-check__wrapper"
+                      for="user-reg-type-opt-0">
+                      <div class="form-check__label"><span>Самозанятый</span></div>
+                    </label></div><!-- linkOrButton={text: '', href: ''}-->
+                  <div class="form-check"><input class="form-check__box" type="checkbox" id="user-reg-type-opt-1"
+                      name="user-reg-type-opt-1" data-option-value="legal_person"><label class="form-check__wrapper"
+                      for="user-reg-type-opt-1">
+                      <div class="form-check__label"><span>Юридическое лицо</span></div>
+                    </label></div><!-- linkOrButton={text: '', href: ''}-->
+                  <div class="form-check"><input class="form-check__box" type="checkbox" id="user-reg-type-opt-2"
+                      name="user-reg-type-opt-2" data-option-value="individual_entrepreneur"><label
+                      class="form-check__wrapper" for="user-reg-type-opt-2">
+                      <div class="form-check__label"><span>Индивидуальный предприниматель</span></div>
+                    </label></div>
+                </div>
+              </div><span class="error form-select__error"></span>
+            </div>
+            <div class="form-control"><label class="control-label font-base_xl form-control__label"
+                for="user-inn">ИНН</label><input class="form-control__input" type="text" name="user-inn" id="user-inn"
+                placeholder="Введите данные" data-must-be-validated="true"><span
+                class="error form-control__error"></span></div>
+            <div class="registration__from-back-block visually-hidden" id="advertiser_back_data_block">
+              <div class="form-control"><label class="control-label font-base_xl form-control__label"
+                  for="user-name">ФИО</label><input class="form-control__input" type="text" name="user-name"
+                  id="user-name" placeholder="" disabled data-must-be-validated="true"><span
+                  class="error form-control__error"></span></div>
+              <div class="form-control"><label class="control-label font-base_xl form-control__label"
+                  for="user-ogrn">ОГРН</label><input class="form-control__input" type="text" name="user-ogrn"
+                  id="user-ogrn" placeholder="" disabled data-must-be-validated="true"><span
+                  class="error form-control__error"></span></div>
+              <div class="form-control"><label class="control-label font-base_xl form-control__label"
+                  for="user-okved">ОКВЭД</label><input class="form-control__input" type="text" name="user-okved"
+                  id="user-okved" placeholder="" disabled data-must-be-validated="true"><span
+                  class="error form-control__error"></span></div>
+            </div>
+            <div class="form-control"><label class="control-label font-base_xl form-control__label"
+                for="user-email">Электронная почта</label><input class="form-control__input" type="email"
+                name="user-email" id="user-email" placeholder="Введите данные" data-must-be-validated="true"><span
+                class="error form-control__error"></span></div>
+            <div class="form-control"><label class="control-label font-base_xl form-control__label"
+                for="user-password">Пароль</label>
+              <div class="form-control__wrapper"><input class="form-control__input" type="password" name="user-password"
+                  id="user-password" placeholder="Введите пароль" data-ui-kit-id="password"
+                  data-must-be-validated="true">
+                <div class="form-control__password-toggle"></div>
+              </div><span class="error form-control__error"></span>
+            </div>
+            <div class="form-control"><label class="control-label font-base_xl form-control__label"
+                for="user-password-repeated">Повторите пароль</label>
+              <div class="form-control__wrapper"><input class="form-control__input" type="password"
+                  name="user-password-repeated" id="user-password-repeated" placeholder="Введите пароль"
+                  data-ui-kit-id="password" data-must-be-validated="true">
+                <div class="form-control__password-toggle"></div>
+              </div><span class="error form-control__error"></span>
+            </div><!-- linkOrButton={text: '', href: ''}-->
+            <div class="form-check"><input class="form-check__box" type="checkbox" id="agreement-data-processing"
+                name="agreement-data-processing" disabled data-modal-id="agreement-modal"
+                data-must-be-validated="true"><label class="form-check__wrapper" for="agreement-data-processing">
+                <div class="form-check__label"><button class="button button_link form-check__button" type="button"
+                    id="agreement-data-processing-button">Ознакомиться с соглашением на обработку персональных
+                    данных</button></div>
+              </label></div><!-- linkOrButton={text: '', href: ''}-->
+            <div class="form-check"><input class="form-check__box" type="checkbox" id="agreement-contract"
+                name="agreement-contract" disabled data-modal-id="contract-modal" data-must-be-validated="true"><label
+                class="form-check__wrapper" for="agreement-contract">
+                <div class="form-check__label"><button class="button button_link form-check__button" type="button"
+                    id="agreement-contract-button">Ознакомиться с договором (ссылка на договор)</button></div>
+              </label></div>
+          </div><button class="button button_primary" type="button" id="registration-form-submit"
+            disabled>Регистрация</button>
+        </form>
+        <div class="registration__to-auth">
+          <p>Есть аккаунт?</p><a href="./auth.html"><button class="button button_link" type="button"
+              id="auth-button">Авторизация</button></a>
+        </div>
+      </section>
+    </main>
+    <div class="modal registration__modal modal_hidden modal_fade" id="agreement-modal">
+      <div class="modal__backdrop">
+        <div class="backdrop"></div>
+      </div>
+      <div class="modal__body">
+        <h2 class="modal__title">Соглашение</h2>
+        <div class="document-modal" id="overflow-block">
+          <div class="document-modal__document-text" id="scrolling-block">
+            <h2>Это текст соглашения</h2>
+            <p class="paragraph">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum
+              является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный
+              печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+              Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный
+              дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в
+              60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах
+              которых используется Lorem Ipsum.</p>
+            <h2>Откуда он появился?</h2>
+            <p class="paragraph">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это
+              не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух
+              тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял
+              одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской
+              литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги
+              "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот
+              трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum
+              dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+            <p class="paragraph">Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны
+              разделы 1.10.32 и 1.10.33 "de Finibus Bonorum et Malorum" Цицерона и их английский перевод, сделанный H.
+              Rackham, 1914 год.</p>
+            <h3>Почему он используется?</h3>
+            <p class="paragraph">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+              сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+              заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при
+              простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной
+              вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым
+              словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего
+              рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке,
+              некоторые - намеренно (например, юмористические варианты).</p>
+            <h3>Не понял почему он используется?</h3>
+            <p class="paragraph">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+              сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+              заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при
+              простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной
+              вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым
+              словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего
+              рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке,
+              некоторые - намеренно (например, юмористические варианты).</p>
+            <h2>Где его взять?</h2>
+            <p class="paragraph">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые
+              модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если
+              вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в
+              середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который
+              они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным
+              настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор
+              моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет
+              повторяющихся абзацей или "невозможных" слов.</p>
+          </div>
+        </div>
+        <div class="buttons-modal document-modal__document-buttons">
+          <div class="buttons-modal__wrapper"><button class="button button_secondary" type="button"
+              id="cancel-button">Отменить</button><button class="button button_primary" type="button" id="accept-button"
+              disabled>Принять</button></div>
+        </div>
+        <div class="modal__close-button" id="modal-close-button"></div>
+      </div>
+    </div>
+    <div class="modal registration__modal modal_hidden modal_fade" id="contract-modal">
+      <div class="modal__backdrop">
+        <div class="backdrop"></div>
+      </div>
+      <div class="modal__body">
+        <h2 class="modal__title">Договор</h2>
+        <div class="document-modal" id="overflow-block">
+          <div class="document-modal__document-text" id="scrolling-block">
+            <h2>Это текст договора</h2>
+            <p class="paragraph">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum
+              является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный
+              печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+              Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный
+              дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в
+              60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах
+              которых используется Lorem Ipsum.</p>
+            <h2>Откуда он появился?</h2>
+            <p class="paragraph">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это
+              не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух
+              тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял
+              одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской
+              литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги
+              "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот
+              трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum
+              dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+            <p class="paragraph">Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны
+              разделы 1.10.32 и 1.10.33 "de Finibus Bonorum et Malorum" Цицерона и их английский перевод, сделанный H.
+              Rackham, 1914 год.</p>
+            <h3>Почему он используется?</h3>
+            <p class="paragraph">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+              сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+              заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при
+              простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной
+              вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым
+              словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего
+              рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке,
+              некоторые - намеренно (например, юмористические варианты).</p>
+            <h3>Не понял почему он используется?</h3>
+            <p class="paragraph">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+              сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+              заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при
+              простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной
+              вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым
+              словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего
+              рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке,
+              некоторые - намеренно (например, юмористические варианты).</p>
+            <h2>Где его взять?</h2>
+            <p class="paragraph">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые
+              модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если
+              вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в
+              середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который
+              они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным
+              настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор
+              моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет
+              повторяющихся абзацей или "невозможных" слов.</p>
+          </div>
+        </div>
+        <div class="buttons-modal document-modal__document-buttons">
+          <div class="buttons-modal__wrapper"><button class="button button_secondary" type="button"
+              id="cancel-button">Отменить</button><button class="button button_primary" type="button" id="accept-button"
+              disabled>Принять</button></div>
+        </div>
+        <div class="modal__close-button" id="modal-close-button"></div>
+      </div>
+    </div>
+  </body>
+</html>
